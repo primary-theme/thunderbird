@@ -24,11 +24,11 @@ Available in both Light and Dark modes. Relax and have fun while you read your e
 
 ## 📖 Table of Contents
 
-- Permissions & Security
-- Goals
-- Key Features
-- [MUST READ] Installing Primary for Thunderbird
-- Screenshots
+- [Permissions & Security](https://github.com/primary-theme/thunderbird#-permissions--security)
+- [Goals](https://github.com/primary-theme/thunderbird#%EF%B8%8F-goals)
+- [Key Features](https://github.com/primary-theme/thunderbird#-key-features)
+- [MUST READ] [Installing Primary for Thunderbird](https://github.com/primary-theme/thunderbird#-complete-guide-to-install-primary-for-thunderbird)
+- [Screenshots](https://github.com/primary-theme/thunderbird#%EF%B8%8F-screenshots)
 - Credits
 
 ## 🔐 Permissions & Security
@@ -59,31 +59,31 @@ Thank you for understanding! 🙏
     - Inbox 
     - Message
     - Composer
-    - ~~Address Book~~ (🆘 Help Wanted)
+    - ~~Address Book~~ (Low Priority | 🆘 Help Wanted)
     - Calendar including Today Pane
     - Tasks (Not Fully Tested | 🆘 Help Wanted)
     - Chat (Not Fully Tested | 🆘 Help Wanted)
     - ~~Notification~~ (🆘 Help Wanted)
 
-#### Available in both [Light Mode]() and [Dark Mode]()!
+#### Available in both Light Mode and Dark Mode! To lean how to activate your preferred mode, read the Complete Guide to Installing Primary below.
 
-## 📥 Complete Guide to Installing Primary for Thunderbird
+## 📥 Complete Guide to Install Primary for Thunderbird
 
 Due to some restrictions or unfound solutions for implementing certain design queues for the theme, there are extra steps needed to complete the Primary experience. Here's the full guide:
 
 1. Start by setting your Thunderbird theme to default.
-    - If you plan to use Primary Light Mode, install Thunderbird's Default Light Theme.
-    - If you plan to use Primary Dark Mode, install Thunderbird's Default Dark Theme.
+    - If you plan to use Primary in Light Mode, install Thunderbird's Default Light Theme.
+    - If you plan to use Primary in Dark Mode, install Thunderbird's Default Dark Theme.
     - *Do not install the System Auto Default Theme. Primary breaks with that option, sorry!*
 2. Next, install Primary via the Thunderbird Add-Ons store.
 3. Next, open Settings by pressing the gear icon on the Left Toolbar.
 4. Under General → Language and Appearance → press the **Colors** button.
-    - If you're using Primary Light Mode:
+    - If you're using Primary in Light Mode:
         1. Set your Text Color to an RGB of `47, 32, 12` respectively.
         2. Set your Background Color to an RGB of `250, 248, 245` respectively.
         3. Set *"Override the colors specificed by the content with my selections above:"* to **Never**.
         4. To confirm changes, press OK.
-    - If you're using Primary Dark Mode:
+    - If you're using Primary in Dark Mode:
         1. Set your Text Color to an RGB of `n` respectively.
         2. Set your Background Color to an RGB of `n` respectively.
         3. Set *"Override the colors specificed by the content with my selections above:"* to **Never**.
@@ -100,3 +100,11 @@ Due to some restrictions or unfound solutions for implementing certain design qu
 
 ## 🖼️ Screenshots
 
+
+
+## 🤍 Credits
+
+Thank you to my supporters for making this project happen! And thank you to the Thunderbird Community for all the resources!
+
+Blockquotes coloring is credits to Quote Collapse by .
+Functions to make theming work is credits to Monterail Full Dark by conema.

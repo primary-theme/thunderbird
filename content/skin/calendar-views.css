@@ -2,7 +2,9 @@
 @import url(chrome://Primary/content/skin/colors.css);
 @import url(chrome://Primary/content/skin/fonts.css);
 
-
+/*————————————————————————————————————————————————————————
+                    Sizing + Light Mode
+————————————————————————————————————————————————————————*/
 :root,
 body,
 div {
@@ -384,3 +386,7 @@ calendar-editable-item[selected="true"].calendar-color-box {
 .multiday-grid:not(.multiday-grid-rotated) .timeIndicator {
     border-block-start: 2px solid var(--primary-red-700); 
 }
+
+/*————————————————————————————————————————————————————————
+                    Dark Mode
+————————————————————————————————————————————————————————*/

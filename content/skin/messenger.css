@@ -15,6 +15,10 @@
 @import url(chrome://Primary/content/skin/today-pane.css);
 @import url(chrome://Primary/content/skin/calendar-views.css);
 
+/*————————————————————————————————————————————————————————
+                    Sizing + Light Mode
+————————————————————————————————————————————————————————*/
+
 /*——————— menubar (File, Edit, etc.) ———————*/
 #menubar-items {
     margin-inline-start: 4px;
@@ -363,3 +367,247 @@ button.tab-close-button {
     border-color: transparent;
     box-shadow: none;
 }
+
+/*————————————————————————————————————————————————————————
+                        Dark Mode
+————————————————————————————————————————————————————————*/
+@media (prefers-color-scheme: dark) {
+    /*——————— menubar (File, Edit, etc.) ———————*/
+    #navigation-toolbox:-moz-lwtheme,
+    #ab-toolbox:-moz-lwtheme,
+    #compose-toolbox:-moz-lwtheme {
+        --lwt-accent-color: var(--primary-black);
+    }
+
+    #titlebar > #toolbar-menubar,
+    #titlebar > #toolbar-menubar:-moz-window-inactive {
+        color: var(--primary-gray-30);
+    }
+
+    #menubar-items > #mail-menubar > menu:not([disabled="true"])[_moz-menuactive="true"] {
+        color: var(--primary-gray-20) !important;
+    }
+
+    @media (-moz-platform: windows-win10) {
+        /* Minimize */
+        .titlebar-button.titlebar-min:hover {
+            background-color: var(--primary-blue-900);
+            stroke: var(--primary-whiter);
+        }
+        /* Maximize */
+        .titlebar-button.titlebar-max:hover {
+            background-color: var(--primary-yellow-900);
+            stroke: var(--primary-whiter);
+        }
+        /* Restore */
+        .titlebar-button.titlebar-restore:hover {
+            background-color: var(--primary-yellow-900);
+            stroke: var(--primary-whiter);
+        }
+        /* Close */
+        .titlebar-button.titlebar-close:hover {
+            background-color: var(--primary-red-900);
+            stroke: var(--primary-whiter);
+        }
+    }
+
+    /*——————— spacesToolbar ———————*/
+    :root {
+        --spaces-bg-color: var(--primary-black);
+        --spaces-bg-image: none;
+        --spaces-button-text-color: var(--primary-gray-30);
+        --spaces-button-active-text-color: var(--primary-white);
+        --spaces-button-active-text-color: var(--primary-white);
+        --spaces-button-active-bg-color: transparent;
+        --spaces-button-badge-text-color: var(--primary-green-500);
+        --spaces-button-badge-bg-color: var(--primary-green-500);
+        --spaces-button-opacity: 1;
+        --spaces-border-color: transparent;
+    }
+
+    /* spacesToolbar Buttons */
+
+        /* Yellow */
+        .spaces-toolbar-button.current:nth-of-type(3n+1),
+        .spaces-toolbar-button:hover:not(.current):nth-of-type(3n+1) {
+            --spaces-button-text-color: var(--primary-yellow-500);
+            --spaces-button-active-text-color: var(--primary-yellow-500);
+        }
+
+        /* Red */
+        .spaces-toolbar-button.current:nth-of-type(3n+2),
+        .spaces-toolbar-button:hover:not(.current):nth-of-type(3n+2) {
+            --spaces-button-text-color: var(--primary-red-500);
+            --spaces-button-active-text-color: var(--primary-red-500);
+        }
+
+        /* Blue */
+        .spaces-toolbar-button.current:nth-of-type(3n+3),
+        .spaces-toolbar-button:hover:not(.current):nth-of-type(3n+3) {
+            --spaces-button-text-color: var(--primary-blue-500);
+            --spaces-button-active-text-color: var(--primary-blue-500);
+        }
+
+    /* spacesToolbar Pinned */
+    #spacesPinnedButton {
+        stroke: var(--primary-gray-30);
+    }
+
+    #spacesPinnedButton:hover,
+    #spacesPinnedButton:hover:active,
+    #spacesPinnedButton[open="true"] {
+        stroke: var(--primary-gray-20);
+    }
+
+    /*——————— Tabs ———————*/
+    .tabmail-tab:-moz-lwtheme {
+        color: var(--primary-gray-40);
+    }
+    
+    .tabmail-tab .tab-background:-moz-lwtheme {
+        border: 1px solid var(--primary-gray-40);
+    }
+    
+    .tabmail-tab .tab-background[selected="true"]:-moz-lwtheme {
+        background-color: var(--primary-gray-70);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.5) inset;
+    }
+
+    /* Tabs on Hover */
+    .tabmail-tab:hover:not([selected="true"]) {
+        color: var(--primary-gray-10);
+    }
+
+    .tabmail-tab:hover .tab-background:not([selected="true"]):-moz-lwtheme {
+        border: 1px solid var(--primary-gray-10);
+    }
+
+    /* Active Tabs */
+
+        /* Yellow */
+        .tabmail-tab:nth-of-type(3n+1) .tab-background[selected="true"]:-moz-lwtheme {
+            border: 1px solid var(--primary-yellow-500);
+        }
+
+        .tabmail-tab:nth-of-type(3n+1)[visuallyselected="true"]:-moz-lwtheme {
+            color: var(--primary-yellow-500);
+        }
+
+        /* Red */
+        .tabmail-tab:nth-of-type(3n+2) .tab-background[selected="true"]:-moz-lwtheme {
+            border: 1px solid var(--primary-red-500);
+        }
+
+        .tabmail-tab:nth-of-type(3n+2)[visuallyselected="true"]:-moz-lwtheme {
+            color: var(--primary-red-500);
+        }
+
+        /* Blue */
+        .tabmail-tab:nth-of-type(3n+3) .tab-background[selected="true"]:-moz-lwtheme {
+            border: 1px solid var(--primary-blue-500);
+        }
+
+        .tabmail-tab:nth-of-type(3n+3)[visuallyselected="true"]:-moz-lwtheme {
+            color: var(--primary-blue-500);
+        }
+
+    /* Close Tabs */
+    #tabs-toolbar:not([brighttext]) button.tab-close-button:not([selected="true"]):hover {
+        background-color: var(--primary-gray-50);
+        color: var(--primary-gray-100);
+    }
+    
+    #tabs-toolbar:not([brighttext]) button.tab-close-button:not([selected="true"]):hover:active {
+        background-color: var(--primary-gray-60);
+        color: var(--primary-gray-80);
+    }
+    
+    .tabmail-tab:nth-of-type(3n+1) .tab-close-button:hover {
+        background-color: var(--primary-yellow-900);
+        color: var(--primary-whiter);
+    }
+    
+    .tabmail-tab:nth-of-type(3n+2) .tab-close-button:hover {
+        background-color: var(--primary-red-900);
+        color: var(--primary-whiter);
+    }
+    
+    .tabmail-tab:nth-of-type(3n+3) .tab-close-button:hover {
+        background-color: var(--primary-blue-900);
+        color: var(--primary-whiter);
+    }
+
+    /* Tabs Overflow */
+    #tabmail-arrowscrollbox::part(scrollbutton-up), #tabmail-arrowscrollbox::part(scrollbutton-down) {
+        --toolbarbutton-icon-fill: var(--primary-gray-60);
+    }
+    
+    #tabmail-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover, 
+    #tabmail-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover {
+        --toolbarbutton-icon-fill: var(--primary-gray-80);
+    }
+
+    /* All Tabs */
+    #alltabs-button .toolbarbutton-icon {
+        fill: var(--primary-gray-60);
+    }
+    
+    #alltabs-button:hover .toolbarbutton-icon {
+        fill: var(--primary-gray-80);
+    }
+
+    /*——————— tabmail Container ———————*/
+    #tabpanelcontainer:-moz-lwtheme {
+        border-top: 1px solid var(--primary-gray-50);
+        border-left: 1px solid var(--primary-gray-50);
+        border-bottom: 1px solid var(--primary-gray-50);
+    }
+
+    :root {
+        --splitter-color: var(--primary-gray-50);
+    }
+
+    #folderpane_splitter {
+        --splitter-color: var(--primary-gray-50);
+    }
+
+    :root tree,
+    :root #folderPaneHeader {
+        --sidebar-background-color: var(--primary-gray-90);
+        --sidebar-text-color: var(--primary-white);
+    }
+
+    :root[lwt-tree-brighttext] #folderPaneHeader {
+        --sidebar-border-color: transparent;
+    }
+
+    #folderPaneHeader .button-flat {
+        color: var(--primary-gray-40);
+    }
+
+    #folderPaneHeader .button-flat:hover {
+        background-color: transparent;
+        color: var(--primary-gray-20);
+    }
+
+    /*——————— statusbar ———————*/
+    #status-bar:-moz-lwtheme {
+        background-color: var(--primary-black);
+        color: var(--lwt-text-color);
+        --lwt-text-color: var(--primary-gray-20);
+        border-top: 1px solid var(--lwt-tabs-border-color);
+        --lwt-tabs-border-color: transparent;
+    }
+
+    /* offline status icon */
+    #offline-status {
+        stroke: var(--primary-green-500);
+    }
+
+    /* Today Pane */
+    #calendar-status-todaypane-button:hover,
+    #calendar-status-todaypane-button:hover:active {
+        color: var(--primary-black) !important;
+    }
+}
+

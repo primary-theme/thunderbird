@@ -1,16 +1,16 @@
+/*
+
+🟥🟨🟦 PRIMARY (Light Mode) by © Cecilia May
+
+For inquiries: contact.ceciliamay@gmail.com
+
+If you want to support development,
+consider donating at
+https://ko-fi.com/ceciliamay
+
+*/
+
 :root {
-    /*
-
-    🟥🟨🟦 PRIMARY (Light Mode) by © Cecilia May
-
-    For inquiries: contact.ceciliamay@gmail.com
-
-    If you want to support development,
-    consider donating at
-    https://ko-fi.com/ceciliamay
-
-    */
-
     --primary-whiter: hsl(36, 37%, 97%);
     --primary-white: hsl(35, 36%, 95%);
     --primary-gray-10: hsl(36, 37%, 92%);
@@ -62,4 +62,72 @@
     --primary-highlight-green: hsla(74, 68%, 44%, 0.2);
     --primary-highlight-blue: hsla(186, 66%, 46%, 0.2);
     --primary-highlight-violet: hsla(236, 100%, 72%, 0.2);
+}
+
+/*
+
+🟥🟨🟦 PRIMARY (Dark Mode) by © Cecilia May
+
+For inquiries: contact.ceciliamay@gmail.com
+
+If you want to support development,
+consider donating at
+https://ko-fi.com/ceciliamay
+
+*/
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-whiter: hsl(33, 66%, 90%);
+        --primary-white: hsl(34, 50%, 80%);
+        --primary-gray-10: hsl(34, 18%, 62%);
+        --primary-gray-20: hsl(35, 27%, 55%);
+        --primary-gray-30: hsl(34, 24%, 30%);
+        --primary-gray-40: hsl(33, 22%, 30%);
+        --primary-gray-50: hsl(33, 20%, 20%);
+        --primary-gray-60: hsl(30, 19%, 17%);
+        --primary-gray-70: hsl(27, 14%, 15%);
+        --primary-gray-80: hsl(32, 19%, 13%);
+        --primary-gray-90: hsl(30, 15%, 13%);
+        --primary-gray-100: hsl(27, 15%, 12%);
+        --primary-black: hsl(26, 16%, 9%);
+        --primary-blacker: hsl(30, 20%, 8%);
+    
+        --primary-red-300: hsl(4, 100%, 68%);
+        --primary-red-500: hsl(4, 65%, 60%);
+        --primary-red-700: hsl(4, 90%, 61%);
+        --primary-red-900: hsl(4, 77%, 38%);
+    
+        --primary-orange-300: hsl(22, 92%, 64%);
+        --primary-orange-500: hsl(22, 92%, 57%);
+        --primary-orange-700: hsl(21, 88%, 51%);
+        --primary-orange-900: hsl(20, 80%, 41%);
+    
+        --primary-yellow-300: hsl(46, 91%, 69%);
+        --primary-yellow-500: hsl(50, 100%, 46%);
+        --primary-yellow-700: hsl(43, 100%, 42%);
+        --primary-yellow-900: hsl(39, 92%, 33%);
+    
+        --primary-green-300: hsl(150, 66%, 53%);
+        --primary-green-500: hsl(154, 52%, 49%);
+        --primary-green-700: hsl(154, 61%, 39%);
+        --primary-green-900: hsl(155, 81%, 24%);
+    
+        --primary-blue-300: hsl(198, 39%, 56%);
+        --primary-blue-500: hsl(198, 62%, 57%);
+        --primary-blue-700: hsl(198, 57%, 55%);
+        --primary-blue-900: hsl(198, 75%, 35%);
+    
+        --primary-violet-300: hsl(256, 63%, 74%);
+        --primary-violet-500: hsl(263, 60%, 67%);
+        --primary-violet-700: hsl(256, 52%, 57%);
+        --primary-violet-900: hsl(256, 44%, 50%);
+    
+        --primary-highlight-red: hsla(350, 84%, 63%, 0.2);
+        --primary-highlight-orange: hsla(27, 100%, 50%, 0.2);
+        --primary-highlight-yellow: hsla(44, 100%, 50%, 0.2);
+        --primary-highlight-green: hsla(74, 68%, 44%, 0.2);
+        --primary-highlight-blue: hsla(186, 66%, 46%, 0.2);
+        --primary-highlight-violet: hsla(236, 100%, 72%, 0.2);
+    }
 }
