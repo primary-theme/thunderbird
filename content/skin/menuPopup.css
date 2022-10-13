@@ -1,0 +1,63 @@
+:root,
+#PopupGlodaAutocomplete,
+menupopup,
+:is(menupopup, panel)[type="arrow"],
+menupopup:not([type="arrow"]) {
+    --panel-background: var(--primary-gray-10);
+    --panel-color: var(--primary-gray-80);
+    --panel-border-color: var(--primary-gray-40);
+    --panel-border-radius: var(--arrowpanel-border-radius);
+    --panel-padding: var(--arrowpanel-padding);
+    --menu-color: var(--primary-gray-100);
+    --menu-border-color: var(--primary-gray-40);
+    --menu-background-color: var(--primary-gray-10);
+    --panel-item-hover-bgcolor: var(--primary-gray-30);
+    --panel-item-active-bgcolor: var(--primary-gray-40);
+    --arrowpanel-dimmed: var(--primary-gray-30);
+    --arrowpanel-dimmed-further: var(--primary-gray-40);
+    --panel-separator-zap-gradient: linear-gradient(var(--primary-gray-40));
+    --arrowpanel-background: var(--primary-gray-10);
+
+    --panel-disabled-color: var(--primary-gray-50);
+    --panel-description-color: var(--primary-gray-60);
+    --arrowpanel-color: var(--primary-gray-80);
+    --arrowpanel-border-color: var(--primary-gray-40);
+
+    --panel-separator-color: var(--primary-gray-40);
+}
+
+/* autocomplete */
+#PopupGlodaAutocomplete {
+    background: var(--primary-gray-10);
+    box-shadow: none;
+}
+
+#PopupGlodaAutocomplete > .autocomplete-richlistbox {
+    border-radius: 4px !important;
+}
+
+.autocomplete-richlistbox {
+    box-shadow: none;
+}
+
+.autocomplete-richlistitem[type^="gloda-"] {
+    border: 1px solid transparent;
+}
+
+.autocomplete-richlistitem[type^="gloda-"]:hover {
+    background: var(--primary-gray-30) !important;
+}
+
+.autocomplete-richlistitem[type^="gloda-"][current="true"] {
+    color: var(--primary-gray-80);
+    background: var(--primary-gray-30) !important;
+    border: 1px solid var(--primary-gray-40);
+}
+
+.autocomplete-richlistitem[type^="gloda-"][current="true"] .ac-url:not([selected="true"]) > .ac-url-text,
+.ac-url:not([selected="true"]) > .ac-url-text {
+    color: var(--primary-blue-700) !important;
+    background: var(--primary-highlight-blue);
+    border-radius: 2px;
+    padding: 0px 2px;
+}

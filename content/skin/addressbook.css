@@ -1,0 +1,6 @@
+/*——————— Essentials ———————*/
+@import url(chrome://Primary/content/skin/colors.css);
+@import url(chrome://Primary/content/skin/fonts.css);
+
+/*——————— Inner ———————*/
+@import url(chrome://Primary/content/skin/primaryToolbar.css);

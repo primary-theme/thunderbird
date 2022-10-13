@@ -1,0 +1,65 @@
+:root {
+    /*
+
+    🟥🟨🟦 PRIMARY (Light Mode) by © Cecilia May
+
+    For inquiries: contact.ceciliamay@gmail.com
+
+    If you want to support development,
+    consider donating at
+    https://ko-fi.com/ceciliamay
+
+    */
+
+    --primary-whiter: hsl(36, 37%, 97%);
+    --primary-white: hsl(35, 36%, 95%);
+    --primary-gray-10: hsl(36, 37%, 92%);
+    --primary-gray-20: hsl(35, 35%, 90%);
+    --primary-gray-30: hsl(34, 36%, 88%);
+    --primary-gray-40: hsl(36, 37%, 83%);
+    --primary-gray-50: hsl(34, 37%, 70%);
+    --primary-gray-60: hsl(34, 28%, 60%);
+    --primary-gray-70: hsl(31, 23%, 50%);
+    --primary-gray-80: hsl(34, 27%, 40%);
+    --primary-gray-90: hsl(34, 30%, 37%);
+    --primary-gray-100: hsl(35, 32%, 30%);
+    --primary-black: hsl(31, 45%, 20%);
+    --primary-blacker: hsl(32, 55%, 12%);
+
+    --primary-red-300: hsl(4, 54%, 61%);
+    --primary-red-500: hsl(4, 72%, 55%);
+    --primary-red-700: hsl(4, 56%, 48%);
+    --primary-red-900: hsl(4, 66%, 30%);
+
+    --primary-orange-300: hsl(26, 66%, 57%);
+    --primary-orange-500: hsl(21, 82%, 55%);
+    --primary-orange-700: hsl(18, 69%, 50%);
+    --primary-orange-900: hsl(24, 96%, 35%);
+
+    --primary-yellow-300: hsl(43, 71%, 67%);
+    --primary-yellow-500: hsl(43, 78%, 52%);
+    --primary-yellow-700: hsl(43, 100%, 42%);
+    --primary-yellow-900: hsl(43, 89%, 38%);
+
+    --primary-green-300: hsl(154, 58%, 65%);
+    --primary-green-500: hsl(154, 47%, 49%);
+    --primary-green-700: hsl(155, 52%, 38%);
+    --primary-green-900: hsl(165, 63%, 29%);
+
+    --primary-blue-300: hsl(198, 39%, 56%);
+    --primary-blue-500: hsl(205, 66%, 46%);
+    --primary-blue-700: hsl(205, 63%, 39%);
+    --primary-blue-900: hsl(205, 95%, 25%);
+
+    --primary-violet-300: hsl(270, 50%, 74%);
+    --primary-violet-500: hsl(266, 31%, 57%);
+    --primary-violet-700: hsl(267, 37%, 43%);
+    --primary-violet-900: hsl(266, 70%, 30%);
+
+    --primary-highlight-red: hsla(350, 84%, 63%, 0.2);
+    --primary-highlight-orange: hsla(27, 100%, 50%, 0.2);
+    --primary-highlight-yellow: hsla(44, 100%, 50%, 0.2);
+    --primary-highlight-green: hsla(74, 68%, 44%, 0.2);
+    --primary-highlight-blue: hsla(186, 66%, 46%, 0.2);
+    --primary-highlight-violet: hsla(236, 100%, 72%, 0.2);
+}

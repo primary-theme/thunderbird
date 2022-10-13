@@ -1,0 +1,87 @@
+:root #quick-filter-bar,
+:root[lwt-tree] #quick-filter-bar,
+:root[lwt-tree] #quick-filter-bar:-moz-lwtheme {
+    background-color: var(--primary-white);
+    color: var(--primary-gray-70);
+}
+
+#quick-filter-bar-expando {
+    --chrome-content-separator-color: var(--primary-gray-40);
+}
+
+toolbarseparator {
+    display: none;
+}
+
+#quick-filter-bar[filterActive="matches"] #qfb-results-label {
+    color: var(--primary-green-700);
+}
+
+#quick-filter-bar[filterActive="nomatches"] #qfb-results-label {
+    color: var(--primary-red-300);
+}
+
+/* Buttons */
+#quick-filter-bar-main-bar toolbarbutton {
+    color: var(--primary-gray-70) !important;
+    stroke: var(--primary-gray-50);
+    fill: transparent;
+    font-weight: bold;
+}
+
+.toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
+.toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),
+.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is([open="true"], [checked="true"], :hover:active) {
+    background-color: var(--primary-highlight-blue);
+    /* border: 1px solid var(--primary-gray-40); */
+    border-color: transparent;
+    box-shadow: none;
+}
+
+#quick-filter-bar-main-bar toolbarbutton[checked="true"] {
+    color: var(--primary-blue-900) !important;
+    stroke: var(--primary-blue-500);
+    fill: color-mix(in srgb, currentColor 20%, transparent);
+}
+
+#quick-filter-bar-main-bar .toolbarbutton-1:not([checked="true"]):hover,
+#quick-filter-bar-main-bar .toolbarbutton-1:not([checked="true"]):hover:active {
+    color: var(--primary-gray-100) !important;
+    stroke: var(--primary-gray-100);
+}
+
+#quick-filter-bar-main-bar #qfb-sticky.toolbarbutton-1[checked="true"] {
+    stroke: var(--primary-red-300);
+    fill: var(--primary-highlight-red);
+}
+
+#qfb-sticky.toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
+#qfb-sticky.toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),
+#qfb-sticky.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is([open="true"], [checked="true"], :hover:active) {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* Dropdown */
+menulist{
+    color: var(--primary-gray-100) !important;
+    background-color: var(--primary-whiter) !important;
+    border: 1px solid var(--primary-gray-40) !important;
+    transition: 50ms ease-in-out;
+}
+
+menulist[open="true"],
+menulist:not([disabled="true"], [open="true"]):hover,
+menulist[open="true"]:not([disabled="true"]),
+menulist[open="true"]:hover:active {
+    transition: 50ms ease-in-out;
+    border: 1px solid var(--primary-gray-60) !important;
+    box-shadow: none;
+}
+
+/* Filter Messages by */
+#quick-filter-bar-filter-text-bar
+.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is([open="true"], [checked="true"], :hover:active) {
+    color: var(--primary-blue-700) !important;
+}

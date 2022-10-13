@@ -1,0 +1,124 @@
+/*——————— Essentials ———————*/
+@import url(chrome://Primary/content/skin/colors.css);
+@import url(chrome://Primary/content/skin/fonts.css);
+
+#today-pane-panel {
+    color: var(--primary-gray-80);
+}
+
+/* Sidebar Header */
+#today-pane-panel > .sidebar-header {
+    height: 28px;
+    font-weight: bold;
+}
+
+/* Today Subpane */
+.today-subpane {
+    background: var(--primary-white);
+}
+
+/* Mini Day Image */
+#mini-day-image {
+    margin: 8px;
+}
+
+/* Agenda */
+.agenda-toolbar {
+    background: var(--primary-gray-10);
+}
+
+#agenda {
+    color: var(--primary-gray-80);
+    background: var(--primary-white);
+    padding: 8px 8px !important;
+}
+
+#agenda .agenda-listitem .agenda-listitem-details {
+    padding: 6px 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#agenda:focus .agenda-listitem.selected .agenda-listitem-details {
+    color: var(--primary-black);
+    background: var(--primary-whiter);
+    border: 1px solid var(--primary-gray-50);
+}
+
+
+/* Tasks */
+#unifinder-task-edit-field {
+    margin: 4px 8px;
+}
+
+/* Border Fixes */
+#today-pane-panel:-moz-lwtheme > .sidebar-header,
+#today-pane-panel > .sidebar-header {
+    border-top: 1px solid var(--primary-gray-40);
+    border-bottom: 1px solid var(--primary-gray-40);
+}
+
+#today-pane-panel,
+.today-subpane {
+    border-bottom: 1px solid var(--primary-gray-40);
+}
+
+/* Buttons */
+#today-pane-panel toolbarbutton {
+    color: var(--primary-gray-60);
+}
+
+#today-pane-panel toolbarbutton:hover,
+.miniday-nav-buttons:not([disabled="true"]):hover,
+#miniday-dropdown-button:not([disabled="true"]):hover,
+#today-pane-panel toolbarbutton:hover:active,
+.miniday-nav-buttons:not([disabled="true"]):hover:active,
+#miniday-dropdown-button:not([disabled="true"]):hover:active {
+    color: var(--primary-gray-100) !important;
+    background: transparent !important;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+#today-pane-panel toolbarbutton.today-closebutton {
+    border-radius: 16px;
+}
+
+#today-pane-panel toolbarbutton.today-closebutton:hover {
+    color: var(--primary-gray-100) !important;
+    background: var(--primary-gray-40) !important;
+}
+
+#today-pane-panel toolbarbutton.today-closebutton:hover:active {
+    color: var(--primary-gray-80) !important;
+    background: var(--primary-gray-50) !important;
+}
+
+#todaypane-new-event-button:not([disabled="true"]) {
+    padding: 3px 10px 4px 10px;
+    margin: 2px 8px;
+    border-radius: 16px;
+    font-weight: bold;
+
+    color: var(--primary-white) !important;
+    background-color: var(--primary-gray-60);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset,
+                0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#todaypane-new-event-button:not([disabled="true"]):hover {
+    color: var(--primary-white) !important;
+    background-color: var(--primary-gray-80) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset,
+                0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#todaypane-new-event-button:not([disabled="true"]):hover:active {
+    color: var(--primary-white) !important;
+    background-color: var(--primary-gray-80) !important;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1) inset,
+                0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+}

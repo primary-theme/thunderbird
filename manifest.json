@@ -1,0 +1,44 @@
+{
+    "name": "Primary — Light Mode",
+    "author": "Cecilia May",
+    "description": "Comfy, playful but productive theme for Thunderbird. Relax and have fun while you read your emails — in light mode. (This is an theme built as an extension, please set your theme to Thunderbird's Default Light Mode Theme to ensure a complete experience.)",
+    "version": "1.0",
+    "applications": {
+        "gecko": {
+            "id": "primary-light@ceciliamay.addons.thunderbird.net",
+            "strict_min_version": "102.0"
+        }
+    },
+    "icons": {
+        "64": "icon.png"
+    },
+    "manifest_version": 2,
+    "experiment_apis": {
+        "WindowListener": {
+            "schema": "api/WindowListener/schema.json",
+            "parent": {
+                "scopes": ["addon_parent"],
+                "paths": [["WindowListener"]],
+                "script": "api/WindowListener/implementation.js"
+            }
+        }
+    },
+    "background": {
+        "scripts": [
+            "content/scripts/loadTheme.js",
+            "content/scripts/loadBlockquotes/debug.js",
+            "content/scripts/loadBlockquotes/variables.js",
+            "content/scripts/loadBlockquotes/reloadVariables.js",
+            "content/scripts/loadBlockquotes/compose.js",
+            "content/scripts/loadBlockquotes/loadBlockquotes.js",
+            "content/scripts/loadBlockquotes/msgDisplay.js"
+        ]
+    },
+    "permissions": [
+      "messagesRead",
+      "messagesModify",
+      "compose",
+      "storage",
+      "tabs"
+    ]
+}

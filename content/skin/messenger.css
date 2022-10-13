@@ -1,0 +1,365 @@
+/*——————— Essentials ———————*/
+@import url(chrome://Primary/content/skin/colors.css);
+@import url(chrome://Primary/content/skin/fonts.css);
+
+/*——————— Inner ———————*/
+@import url(chrome://Primary/content/skin/root.css); /* used as Fallback */
+@import url(chrome://Primary/content/skin/primaryToolbar.css);
+@import url(chrome://Primary/content/skin/messengerInbox.css);
+@import url(chrome://Primary/content/skin/folderPane.css);
+@import url(chrome://Primary/content/skin/messageHeader.css);
+@import url(chrome://Primary/content/skin/multimessage.css);
+@import url(chrome://Primary/content/skin/menuPopup.css);
+@import url(chrome://Primary/content/skin/messagebar.css);
+
+@import url(chrome://Primary/content/skin/today-pane.css);
+@import url(chrome://Primary/content/skin/calendar-views.css);
+
+/*——————— menubar (File, Edit, etc.) ———————*/
+#menubar-items {
+    margin-inline-start: 4px;
+}
+
+#navigation-toolbox:-moz-lwtheme,
+#ab-toolbox:-moz-lwtheme,
+#compose-toolbox:-moz-lwtheme {
+    background-color: var(--lwt-accent-color);
+    --lwt-accent-color: var(--primary-gray-30);
+    background-image: none;
+    background-repeat: none;
+    background-position: none;
+}
+
+#titlebar > #toolbar-menubar,
+#titlebar > #toolbar-menubar:-moz-window-inactive {
+    color: var(--primary-gray-60);
+}
+
+#menubar-items > #mail-menubar > menu:not([disabled="true"])[_moz-menuactive="true"] {
+    background: transparent;
+    color: var(--primary-gray-60) !important;
+}
+
+/* Minimize, Maximize, Restore, Close for WINDOWS OS */
+@media (-moz-platform: windows-win10) {
+    /* Minimize */
+    .titlebar-button.titlebar-min:hover {
+        background-color: var(--primary-blue-500);
+        stroke: var(--primary-white);
+    }
+    /* Maximize */
+    .titlebar-button.titlebar-max:hover {
+        background-color: var(--primary-yellow-700);
+        stroke: var(--primary-white);
+    }
+    /* Restore */
+    .titlebar-button.titlebar-restore:hover {
+        background-color: var(--primary-yellow-700);
+        stroke: var(--primary-white);
+    }
+    /* Close */
+    .titlebar-button.titlebar-close:hover {
+        background-color: var(--primary-red-700);
+        stroke: var(--primary-white);
+    }
+}
+
+
+/*——————— spacesToolbar ———————*/
+/* 
+Fix for spacesToolbar vertical movement
+after adding margins top and bottom to tabs
+*/
+.spaces-toolbar:not([hidden]) {
+    margin-top: calc(-1 * var(--tab-min-height) - 7px);
+}
+
+:root {
+    --spaces-bg-color: var(--primary-gray-30);
+    --spaces-bg-image: none;
+    --spaces-button-text-color: var(--primary-gray-60);
+    --spaces-button-active-text-color: var(--primary-gray-100);
+    --spaces-button-active-text-color: var(--primary-gray-100);
+    --spaces-button-active-bg-color: transparent;
+    --spaces-button-badge-text-color: var(--primary-green-700);
+    --spaces-button-badge-bg-color: var(--primary-green-700);
+    --spaces-button-opacity: 1;
+    --spaces-border-color: transparent;
+}
+
+/* spacesToolbar Buttons */
+.spaces-toolbar-button:hover:not(.current) {
+    background-color: transparent;
+}
+
+    /* Yellow */
+    .spaces-toolbar-button.current:nth-of-type(3n+1),
+    .spaces-toolbar-button:hover:not(.current):nth-of-type(3n+1) {
+        --spaces-button-text-color: var(--primary-yellow-700);
+        --spaces-button-active-text-color: var(--primary-yellow-700);
+    }
+
+    /* Red */
+    .spaces-toolbar-button.current:nth-of-type(3n+2),
+    .spaces-toolbar-button:hover:not(.current):nth-of-type(3n+2) {
+        --spaces-button-text-color: var(--primary-red-500);
+        --spaces-button-active-text-color: var(--primary-red-500);
+    }
+
+    /* Blue */
+    .spaces-toolbar-button.current:nth-of-type(3n+3),
+    .spaces-toolbar-button:hover:not(.current):nth-of-type(3n+3) {
+        --spaces-button-text-color: var(--primary-blue-500);
+        --spaces-button-active-text-color: var(--primary-blue-500);
+    }
+
+/* spacesToolbar Pinned */
+#spacesPinnedButton {
+    stroke: var(--primary-gray-60);
+    border-radius: 0;
+}
+
+#spacesPinnedButton:hover,
+#spacesPinnedButton:hover:active,
+#spacesPinnedButton[open="true"] {
+    stroke: var(--primary-gray-80);
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+.toolbarbutton-1:not([disabled="true"]):is(:hover, [open="true"]) > .toolbarbutton-menubutton-button,
+.toolbarbutton-1:not([disabled="true"]):hover > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1:not([type="menu-button"], [disabled="true"], [checked="true"], [open="true"], :active):hover {
+    --toolbarbutton-hover-background: transparent;
+    --toolbarbutton-hover-bordercolor: transparent;
+    --toolbarbutton-hover-boxshadow: none;
+}
+
+/* Show spacesToolbar */
+.spacesToolbarReveal:not([hidden=""]) {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/*——————— Tabs ———————*/
+#tabmail-arrowscrollbox {
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.tabmail-tab:-moz-lwtheme {
+    color: var(--primary-gray-60);
+    transition: 50ms ease-in-out;
+    margin-inline-end: 4px;
+}
+
+.tabmail-tab .tab-background:-moz-lwtheme {
+    border-radius: 4px;
+    border: 1px solid var(--primary-gray-60);
+}
+
+.tabmail-tab .tab-background[selected="true"]:-moz-lwtheme {
+    background-color: var(--primary-white);
+    background-image: none;
+    box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Tabs on Hover */
+.tabmail-tab:hover:not([selected="true"]) {
+    transition: 50ms ease-in-out;
+    color: var(--primary-gray-90);
+}
+
+.tabmail-tab:hover .tab-background:not([selected="true"]):-moz-lwtheme {
+    background-color: transparent;
+    border: 1px solid var(--primary-gray-90);
+}
+
+.tab-line {
+    height: 0;
+}
+
+/* Tabs on Press */
+.tabmail-tab:active {
+    transition: 50ms ease-in-out;
+    box-shadow: none;
+}
+
+/* Active Tabs */
+
+    /* Yellow */
+    .tabmail-tab:nth-of-type(3n+1) .tab-background[selected="true"]:-moz-lwtheme {
+        border: 1px solid var(--primary-yellow-700);
+    }
+
+    .tabmail-tab:nth-of-type(3n+1)[visuallyselected="true"]:-moz-lwtheme {
+        color: var(--primary-yellow-700);
+    }
+
+    /* Red */
+    .tabmail-tab:nth-of-type(3n+2) .tab-background[selected="true"]:-moz-lwtheme {
+        border: 1px solid var(--primary-red-500);
+    }
+
+    .tabmail-tab:nth-of-type(3n+2)[visuallyselected="true"]:-moz-lwtheme {
+        color: var(--primary-red-500);
+    }
+
+    /* Blue */
+    .tabmail-tab:nth-of-type(3n+3) .tab-background[selected="true"]:-moz-lwtheme {
+        border: 1px solid var(--primary-blue-500);
+    }
+
+    .tabmail-tab:nth-of-type(3n+3)[visuallyselected="true"]:-moz-lwtheme {
+        color: var(--primary-blue-500);
+    }
+
+/* Close Tabs */
+.tab-close-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.tab-close-button {
+    border-radius: 8px;
+}
+
+button.tab-close-button {
+    padding: 2px 2px 3px 2px;
+}
+
+#tabs-toolbar:not([brighttext]) button.tab-close-button:not([selected="true"]):hover {
+    background-color: var(--primary-gray-50);
+    color: var(--primary-gray-100);
+}
+
+#tabs-toolbar:not([brighttext]) button.tab-close-button:not([selected="true"]):hover:active {
+    background-color: var(--primary-gray-60);
+    color: var(--primary-gray-80);
+}
+
+.tabmail-tab:nth-of-type(3n+1) .tab-close-button:hover {
+    background-color: var(--primary-yellow-300);
+    color: var(--primary-white);
+}
+
+.tabmail-tab:nth-of-type(3n+2) .tab-close-button:hover {
+    background-color: var(--primary-red-300);
+    color: var(--primary-white);
+}
+
+.tabmail-tab:nth-of-type(3n+3) .tab-close-button:hover {
+    background-color: var(--primary-blue-300);
+    color: var(--primary-white);
+}
+                   
+/* Tabs Overflow */
+#tabmail-arrowscrollbox:not([scrolledtostart])::part(overflow-start-indicator),
+#tabmail-arrowscrollbox:not([scrolledtoend])::part(overflow-end-indicator) {
+    background-image: none;
+}
+
+#tabmail-arrowscrollbox::part(scrollbutton-up), #tabmail-arrowscrollbox::part(scrollbutton-down) {
+    --toolbarbutton-icon-fill: var(--primary-gray-60);
+}
+
+#tabmail-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover, 
+#tabmail-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover {
+    background: transparent;
+    --toolbarbutton-icon-fill: var(--primary-gray-80);
+}
+
+/* All Tabs */
+#alltabs-button {
+    border-radius: 0px;
+}
+
+#alltabs-button:hover,
+#alltabs-button:hover:active,
+#alltabs-button[open="true"] {
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):hover:active,
+.toolbarbutton-1:not([type="menu-button"], [disabled="true"])[open="true"],
+.toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active, .toolbarbutton-1[open="true"] >
+.toolbarbutton-menubutton-dropmarker:not([disabled="true"]) {
+    --toolbarbutton-active-background: transparent;
+}
+
+#alltabs-button .toolbarbutton-icon {
+    fill: var(--primary-gray-60);
+}
+
+#alltabs-button:hover .toolbarbutton-icon {
+    fill: var(--primary-gray-80);
+}
+
+
+/*——————— tabmail Container ———————*/
+#tabpanelcontainer:-moz-lwtheme {
+    border-top: 1px solid var(--primary-gray-40);
+    border-left: 1px solid var(--primary-gray-40);
+    border-bottom: 1px solid var(--primary-gray-40);
+}
+
+:root {
+    --splitter-color: var(--primary-gray-40);
+}
+
+#folderpane_splitter {
+    --splitter-color: var(--primary-gray-40);
+}
+
+:root tree,
+:root #folderPaneHeader {
+    --sidebar-background-color: var(--primary-gray-10);
+    --sidebar-text-color: var(--primary-gray-80);
+}
+
+:root[lwt-tree-brighttext] #folderPaneHeader {
+    --sidebar-border-color: transparent;
+}
+
+#folderPaneHeader .button-flat {
+    color: var(--primary-gray-50);
+}
+
+#folderPaneHeader .button-flat:hover {
+    background-color: transparent;
+    color: var(--primary-black);
+}
+
+/*——————— statusbar ———————*/
+#status-bar:-moz-lwtheme {
+    appearance: none;
+    background-repeat: none;
+    background-position: none;
+    background-color: var(--primary-gray-30);
+    background-image: none;
+    color: var(--lwt-text-color);
+    --lwt-text-color: var(--primary-gray-70);
+    border-top: 1px solid var(--lwt-tabs-border-color);
+    --lwt-tabs-border-color: transparent;
+}
+
+.statusbarpanel {
+    padding: 2px 4px;
+}
+
+/* offline status icon */
+#offline-status {
+    stroke: var(--primary-green-500);
+}
+
+/* Today Pane */
+#calendar-status-todaypane-button:hover,
+#calendar-status-todaypane-button:hover:active {
+    color: var(--primary-black) !important;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}

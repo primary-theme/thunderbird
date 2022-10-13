@@ -1,0 +1,174 @@
+:root, 
+body, 
+#messengerWindow {
+    --lwt-accent-color: var(--primary-gray-10) !important;
+
+    --sidebar-text-color: var(--primary-black);
+    --sidebar-background-color: var(--primary-gray-20);
+    --toolbar-bgcolor: var(--primary-gray-10);
+
+    --button-bgcolor: transparent;
+    --button-hover-bgcolor: transparent;
+    --button-active-bgcolor: transparent;
+    --button-primary-bgcolor: var(--primary-gray-50);
+    --button-primary-hover-bgcolor: var(--primary-gray-60);
+    --button-primary-active-bgcolor: var(--primary-gray-60);
+    --button-primary-color: var(--primary-gray-50);
+
+    --error-text-color: var(--primary-red-300);
+
+    --input-bgcolor: var(--primary-gray-10);
+    --input-color: var(--primary-gray-100);
+    --input-border-color: var(--primary-gray-40);
+
+    --autocomplete-popup-separator-color: var(--primary-gray-40);
+
+    --panel-banner-item-update-supported-bgcolor: var(--primary-green-300);
+    --panel-banner-item-info-icon-bgcolor: var(--primary-blue-300);
+    
+    --lwt-tabs-border-color: transparent;
+    --sidebar-border-color: var(--primary-gray-40) !important;
+
+    /* I don't know where this is applying lol */
+    /* --focus-outline: 1px solid var(--focus-outline-color) !important;
+    --focus-outline-color: var(--primary-highlight-blue) !important;
+    --focus-outline-offset: 1px !important; */
+
+    --checkbox-border-color: var(--primary-gray-40);
+    --checkbox-unchecked-bgcolor: var(--primary-white);
+    --checkbox-unchecked-hover-bgcolor: var(--primary-whiter);
+    --checkbox-unchecked-active-bgcolor: var(--primary-gray-50);
+    --checkbox-checked-border-color: rgba(0, 0, 0, 0.1);
+    --checkbox-checked-color: var(--primary-whiter);
+    --checkbox-checked-bgcolor: var(--primary-green-500);
+    --checkbox-checked-hover-bgcolor: var(--primary-green-700);
+    --checkbox-checked-active-bgcolor: var(--primary-green-900);
+
+    --toolbarbutton-border-radius: 4px;
+
+    --toolbarbutton-hover-background: var(--primary-gray-80);
+    --toolbarbutton-hover-bordercolor: rgba(0, 0, 0, 0.1);
+
+    --toolbarbutton-header-bordercolor: rgba(0, 0, 0, 0.1);
+
+    --toolbarbutton-active-background: var(--primary-gray-80);
+    --toolbarbutton-active-bordercolor: rgba(0, 0, 0, 0.1);
+    --toolbarbutton-active-boxshadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+
+    --toolbarbutton-checked-background: var(--primary-highlight-blue);
+
+    --toolbarbutton-icon-fill-attention: var(--primary-blue-700);
+
+    --toolbarseparator-color: var(--primary-gray-40);
+
+    --toolbar-field-focus-border-color: var(--primary-gray-40);
+    --toolbar-field-highlight: var(--primary-highlight-blue);
+    --toolbar-field-highlight-color: var(--primary-highlight-blue);
+    
+    --item-focus-selected-border-color: var(--primary-gray-40);
+    --default: var(--primary-highlight-violet);
+    --primary: var(--primary-highlight-violet);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+checkbox,
+.checkbox-check {
+    border-radius: 3px;
+}
+
+.remote-gloda-search-container {
+    margin: 4px;
+}
+
+*::selection,
+body::selection,
+body div::selection {
+    color: var(--primary-black) !important;
+    background: var(--primary-highlight-blue) !important;
+}
+
+menulist {
+    margin: 6px 6px;
+}
+
+xul|separator:not([orient="vertical"]) {
+    display: none;
+}
+
+toolbarbutton:hover,
+toolbarbutton:hover:active {
+    cursor: pointer;
+}
+
+/* LW-themes enabled */
+:root:-moz-lwtheme {
+    --lwt-text-color: var(--primary-gray-100);
+    color: var(--primary-gray-100);
+    --button-background: var(--primary-gray-60);
+    --button-background-hover: var(--primary-gray-80);
+    --button-background-active: var(--primary-gray-80);
+    --toolbar-color: var(--lwt-text-color, inherit);
+    --toolbar-bgcolor: var(--primary-gray-30);
+    --toolbar-bgimage: none;
+    --toolbarbutton-icon-fill-opacity: 1;
+    --autocomplete-popup-url-color: var(--primary-gray-100);
+    --toolbar-field-background-color: var(--primary-white);
+    --toolbar-field-border-color: var(--primary-gray-60);
+}
+
+:root[lwt-tree] {
+    --splitter-color: var(--primary-gray-40);
+    /* --select-focus-text-color: var(--primary-black); */
+    --new-focused-folder-color: var(--primary-black);
+    --row-grouped-header-bg-color: var(--primary-gray-30);
+    --row-grouped-header-bg-color-selected: var(--primary-gray-20);
+    --sidebar-highlight-background-color: var(--primary-gray-20);
+}
+
+#FindToolbar:-moz-lwtheme,
+.themeable-full:-moz-lwtheme,
+.themeable-brighttext:-moz-lwtheme {
+    --toolbarbutton-hover-background: var(--primary-gray-80);
+    --toolbarbutton-hover-bordercolor: rgba(0, 0, 0, 0.1);
+    --toolbarbutton-active-background: var(--primary-gray-80);
+    --toolbarbutton-active-bordercolor: rgba(0, 0, 0, 0.3);
+    --toolbarbutton-active-boxshadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1) inset,
+    0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+    --toolbarbutton-checked-background: var(--primary-blue-300);
+}
+
+/* TODO */
+/* Variables File No. 2 */
+
+:root {
+    --autocomplete-popup-url-color: -moz-nativehyperlinktext;
+    --tabline-color: var(--primary-gray-40);
+    --glassShadowColor: hsla(240, 5%, 5%, 0.3);
+    --new-folder-color: -moz-hyperlinktext;
+    --noselect-folder-color: GrayText;
+    --toolbar-non-lwt-bgcolor: -moz-dialog;
+    --toolbar-non-lwt-textcolor: -moz-dialogText;
+    --toolbar-non-lwt-bgimage: transparent;
+    --chrome-content-separator-color: ThreeDShadow;
+    --row-grouped-header-bg-color: var(--primary-white);
+    --row-grouped-header-bg-color-selected: var(--primary-white);
+    --panel-separator-color: var(--primary-gray-40);
+    --splitter-color: var(--primary-gray-40);
+}
+  
+  @media (-moz-windows-default-theme) {
+    :root {
+        --lwt-tabs-border-color: transparent;
+        --tabline-color: var(--primary-gray-40);
+        --toolbar-non-lwt-bgcolor: #f9f9fa;
+        --toolbar-non-lwt-textcolor: #0c0c0d;
+        --toolbar-non-lwt-bgimage: none;
+        --panel-separator-color: var(--primary-gray-40);
+        --autocomplete-popup-url-color: var(--primary-gray-80);
+        --splitter-color: #var(--primary-gray-40);
+        --select-focus-text-color: var(--primary-gray-100);
+    }
+}

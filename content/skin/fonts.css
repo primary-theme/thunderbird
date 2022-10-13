@@ -1,0 +1,30 @@
+/*——————— Embedded Fonts for Primary ———————*/
+
+/* Inter Regular */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: normal;
+    src: local(''),
+         url(fonts/Inter-Regular.woff2) format('woff2');
+}
+
+/* Inter Bold */
+@font-face {
+    font-family: 'Inter';
+    font-style: bold;
+    font-weight: bold;
+    src: local(''),
+         url(fonts/Inter-SemiBold.woff2) format('woff2');
+}
+
+:root {
+    --default-font: 'Inter';
+    font-family: var(--default-font) !important;
+}
+
+* {
+    font-family: var(--default-font) !important;
+    text-shadow: none !important; 
+    font-feature-settings: "cv01", "cv05", "cv06", "cv11";
+}
