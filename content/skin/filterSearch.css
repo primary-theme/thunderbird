@@ -2,7 +2,4 @@
 @import url(chrome://Primary/content/skin/colors.css);
 @import url(chrome://Primary/content/skin/fonts.css);
 
-.facets-sidebar {
-    color: var(--primary-gray-100);
-    background: var(--primary-gray-10);
-}
+/* BUG TODO */

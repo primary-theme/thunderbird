@@ -1,3 +1,7 @@
+/*————————————————————————————————————————————————————————
+                    Sizing + Light Mode
+————————————————————————————————————————————————————————*/
+
 .message-header-container {
     padding: 4px 18px 4px 8px;
 }
@@ -22,7 +26,7 @@
 .header-message-id {
     color: var(--primary-gray-100);
     font-weight: bold;
-    --message-header-field-offset: 2px 4px
+    --message-header-field-offset: 2px 4px;
 }
 
 .header-recipient:hover,
@@ -121,4 +125,110 @@ button.email-action-flagged.flagged {
     border: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1) inset,
                 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+/*————————————————————————————————————————————————————————
+                    Dark Mode
+————————————————————————————————————————————————————————*/
+
+@media (prefers-color-scheme: dark) {
+    :root[lwt-tree] #singleMessage,
+    :root[lwt-tree] #attachmentView,
+    :root[lwt-tree] #attachmentBar {
+        background-color: var(--primary-gray-90) !important;
+        color: var(--primary-gray-10) !important;
+    }
+
+    .header-recipient,
+    .header-newsgroup,
+    .header-message-id {
+        color: var(--primary-gray-10);
+    }
+
+    .header-recipient:hover,
+    .header-newsgroup:hover,
+    .header-message-id:hover {
+        color: var(--primary-blue-500);
+        background-color: var(--primary-highlight-blue);
+    }
+
+    #expandedsubjectBox {
+        color: var(--primary-whiter);
+    }
+
+    .recipient-avatar {
+        color:var(--primary-white);
+        background: var(--primary-red-700);
+        border: 1px solid var(--primary-red-900);
+    }
+
+    /* Buttons */
+    #messageHeader .toolbarbutton-1 {
+        color: var(--primary-gray-20) !important;
+        stroke: var(--primary-gray-30);
+        font-weight: bold;
+    }
+
+    #messageHeader .toolbarbutton-1:hover {
+        color: var(--primary-white) !important;
+        stroke: var(--primary-white);
+    }
+
+    #messageHeader:not(.message-header-buttons-only-icons)
+    .toolbarbutton-1.message-header-view-button:not([type="menu-button"]),
+    #messageHeader:not(.message-header-buttons-only-icons)
+    .toolbarbutton-1.message-header-view-button > .toolbarbutton-menubutton-button,
+    #messageHeader:not(.message-header-buttons-only-icons)
+    .toolbarbutton-1.message-header-view-button > .toolbarbutton-menubutton-dropmarker,
+    #headingWrapper .toolbarbutton-1.message-header-view-button {
+        border-color: transparent;
+    }
+
+    #messageHeader:not(.message-header-buttons-only-icons)
+    .toolbarbutton-1.message-header-view-button:not([disabled=true]):is(:hover,[open]) >
+    .toolbarbutton-menubutton-button,
+    #messageHeader:not(.message-header-buttons-only-icons)
+    .toolbarbutton-1.message-header-view-button:not([disabled=true]):is(:hover,[open]) >
+    .toolbarbutton-menubutton-dropmarker,
+    #messageHeader:not(.message-header-buttons-only-icons)
+    .toolbarbutton-1.message-header-view-button:not([type="menu-button"],[disabled=true],[checked=true],[open],:active):hover,
+    #messageHeader:not(.message-header-buttons-only-icons)
+    .toolbarbutton-1.message-header-view-button:not([buttonover],[open],:active):hover >
+    .toolbarbutton-menubutton-dropmarker:not([disabled]),
+    #headingWrapper .toolbarbutton-1.message-header-view-button:hover {
+        border-color: transparent;
+    }
+
+    .message-header-view-button {
+        fill: transparent;
+    }
+
+    /* Star */
+    button.email-action-flagged.flagged {
+        fill: var(--primary-yellow-900) !important;
+        stroke: var(--primary-yellow-700);
+    }
+
+    /* Popups */
+    .popup-panel-buttons-container > button {
+        color: var(--primary-white) !important;
+        background-color: var(--primary-gray-30) !important;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.3) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.35);
+    }
+
+    .popup-panel-buttons-container > button:hover {
+        background-color: var(--primary-gray-50) !important;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.3) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .popup-panel-buttons-container > button:hover:active {
+        background-color: var(--primary-gray-50);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+    }
 }

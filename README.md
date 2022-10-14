@@ -29,7 +29,7 @@ Available in both Light and Dark modes. Relax and have fun while you read your e
 - [Key Features](https://github.com/primary-theme/thunderbird#-key-features)
 - [MUST READ] [Installing Primary for Thunderbird](https://github.com/primary-theme/thunderbird#-complete-guide-to-install-primary-for-thunderbird)
 - [Screenshots](https://github.com/primary-theme/thunderbird#%EF%B8%8F-screenshots)
-- Credits
+- [Credits](https://github.com/primary-theme/thunderbird#-credits)
 
 ## 🔐 Permissions & Security
 
@@ -100,7 +100,15 @@ Due to some restrictions or unfound solutions for implementing certain design qu
 
 ## 🖼️ Screenshots
 
+Table for Light Mode | Dark Mode
 
+Inbox in Default View (Horizontal View)
+
+Inbox in a Customized View (Today Pane + Vertical View)
+
+Composer
+
+Calendar
 
 ## 🤍 Credits
 

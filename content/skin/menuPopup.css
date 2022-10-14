@@ -1,3 +1,7 @@
+/*————————————————————————————————————————————————————————
+                    Sizing + Light Mode
+————————————————————————————————————————————————————————*/
+
 :root,
 #PopupGlodaAutocomplete,
 menupopup,
@@ -60,4 +64,68 @@ menupopup:not([type="arrow"]) {
     background: var(--primary-highlight-blue);
     border-radius: 2px;
     padding: 0px 2px;
+}
+
+/*————————————————————————————————————————————————————————
+                    Dark Mode
+————————————————————————————————————————————————————————*/
+
+@media (prefers-color-scheme: dark) {
+    :root,
+    #PopupGlodaAutocomplete,
+    menupopup,
+    :is(menupopup, panel)[type="arrow"],
+    menupopup:not([type="arrow"]) {
+        --panel-background: var(--primary-gray-90);
+        --panel-color: var(--primary-gray-20);
+        --panel-border-color: var(--primary-gray-50);
+        --panel-border-radius: var(--arrowpanel-border-radius);
+        --panel-padding: var(--arrowpanel-padding);
+        --menu-color: var(--primary-gray-20);
+        --menu-border-color: var(--primary-gray-50);
+        --menu-background-color: var(--primary-gray-90);
+        --panel-item-hover-bgcolor: var(--primary-gray-70);
+        --panel-item-active-bgcolor: var(--primary-gray-black);
+        --arrowpanel-dimmed: var(--primary-gray-50);
+        --arrowpanel-dimmed-further: var(--primary-gray-60);
+        --panel-separator-zap-gradient: linear-gradient(var(--primary-gray-50));
+        --arrowpanel-background: var(--primary-gray-90);
+
+        --panel-disabled-color: var(--primary-gray-50);
+        --panel-description-color: var(--primary-gray-40);
+        --arrowpanel-color: var(--primary-gray-20);
+        --arrowpanel-border-color: var(--primary-gray-50);
+
+        --panel-separator-color: var(--primary-gray-50);
+    }
+
+    /* autocomplete */
+    #PopupGlodaAutocomplete {
+        background: var(--primary-gray-90);
+        box-shadow: none;
+    }
+
+    .autocomplete-richlistbox {
+        box-shadow: none;
+    }
+
+    .autocomplete-richlistitem[type^="gloda-"] {
+        border: 1px solid transparent;
+    }
+
+    .autocomplete-richlistitem[type^="gloda-"]:hover {
+        background: var(--primary-black) !important;
+    }
+
+    .autocomplete-richlistitem[type^="gloda-"][current="true"] {
+        color: var(--primary-gray-20);
+        background: var(--primary-black) !important;
+        border: 1px solid var(--primary-gray-50);
+    }
+
+    .autocomplete-richlistitem[type^="gloda-"][current="true"] .ac-url:not([selected="true"]) > .ac-url-text,
+    .ac-url:not([selected="true"]) > .ac-url-text {
+        color: var(--primary-blue-700) !important;
+        background: var(--primary-highlight-blue);
+    }
 }

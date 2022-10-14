@@ -46,7 +46,7 @@ div {
 
     --viewDragboxColor: -moz-dialogtext;
     --viewDragboxBackground: var(--primary-highlight-orange);
-    --viewDropshadowBackground: var(--primary-highlight-yellow-opaque);
+    /* --viewDropshadowBackground: var(--primary-highlight-yellow-opaque); */
 }
 
 #unifinder-closer .close-icon {
@@ -148,7 +148,7 @@ td.minimonth-day {
 .calendar-list-header {
     color: var(--primary-gray-80);
     background: transparent;
-    border-top: 1px solidvar(--primary-gray-40);
+    border-top: 1px solid var(--primary-gray-40);
 }
 
 checkbox.treenode-checkbox > .checkbox-check {
@@ -212,7 +212,6 @@ checkbox.treenode-checkbox > .checkbox-check {
 }
 
 /* Big Calendar */
-
 .navigation-inner-box {
     color: var(--primary-gray-80);
     padding: 8px;
@@ -390,3 +389,318 @@ calendar-editable-item[selected="true"].calendar-color-box {
 /*————————————————————————————————————————————————————————
                     Dark Mode
 ————————————————————————————————————————————————————————*/
+
+@media (prefers-color-scheme: dark) {
+    :root,
+    body,
+    div {
+        --viewColor: var(--primary-gray-20);
+        --viewBackground: var(--primary-black) !important;
+        --viewBorderColor: var(--primary-gray-50);
+
+        --viewCalendarHeaderBackground: rgba(0, 0, 0, 0.03);
+        --viewHighlightBorderColor: var(--primary-gray-50);
+
+        --viewTodayBorderColor: transparent;
+        --viewTodayColor: var(--primary-gray-20);
+        --viewTodayBackground: color-mix(in srgb, var(--primary-highlight-blue) 20%, var(--primary-gray-90));
+        --viewTodayLabelColor: var(--primary-gray-20);
+        --viewTodayLabelBackground: var(--primary-highlight-blue);
+        --viewTodayOffBackground: color-mix(in srgb, var(--primary-highlight-blue) 50%, var(--primary-gray-90));
+        --viewTodayDayLabelBackground: color-mix(in srgb, var(--primary-highlight-blue) 20%, var(--primary-gray-90));
+        --viewTodayWeekendBackground: var(--primary-green-300);
+
+        --viewWeekendBackground: color-mix(in srgb, var(--primary-highlight-green) 20%, var(--primary-gray-90));
+
+        --viewHeaderSelectedBackground: color-mix(in srgb, var(--primary-highlight-yellow) 40%, var(--primary-gray-90));
+
+        --viewDayBoxSelectedBackground: color-mix(in srgb, var(--primary-highlight-yellow) 50%, var(--primary-gray-90));
+        --viewDayBoxOffSelectedBackground: color-mix(in srgb, var(--primary-highlight-yellow) 50%, var(--primary-gray-90));
+        --viewDayBoxOtherSelectedBackground: color-mix(in srgb, var(--primary-highlight-yellow) 20%, var(--primary-gray-90));
+
+        --viewMonthOtherBackground: var(--primary-gray-90);
+        --viewMonthDayBoxSelectedColor: var(--primary-gray-20);
+        --viewMonthDayBoxLabelColor: var(--primary-gray-70);
+        --viewMonthDayOtherBackground: color-mix(in srgb, var(--primary-highlight-green) 20%, var(--primary-gray-90));
+        --viewMonthDayOffLabelBackground: color-mix(in srgb, var(--primary-highlight-green) 50%, var(--primary-gray-90));
+
+        --viewOffTimeBackground: color-mix(in srgb, var(--primary-highlight-blue) 40%, var(--primary-gray-90));
+        --viewTimeBoxColor: var(--primary-gray-20);
+
+        --viewDayLabelSelectedColor: var(--primary-gray-20);
+        --viewDayLabelSelectedBackground: var(--primary-highlight-violet);
+
+        --viewDragboxColor: -moz-dialogtext;
+        --viewDragboxBackground: var(--primary-highlight-orange);
+        /* --viewDropshadowBackground: var(--primary-highlight-yellow-opaque); */
+    }
+
+    #unifinder-closer .close-icon {
+        color: var(--primary-white);
+        background: var(--primary-red-300);
+    }
+    
+    #unifinder-closer .close-icon:hover {
+        color: var(--primary-white);
+        background: var(--primary-red-500);
+    }
+
+    /* Mini Month Pane */
+    calendar-minimonth,
+    :root #calSidebar,
+    .minimonth-month-box {
+        background: var(--primary-gray-90) !important;
+    }
+
+    .minimonth-month-box {
+        border: none;
+    }
+
+    #minimonth-pane {
+        color: var(--primary-gray-10);
+    }
+
+    .minimonth-month-name,
+    .minimonth-year-name  {
+        color: var(--primary-gray-20);
+    }
+
+
+    #minimonth-pane toolbarbutton {
+        color: var(--primary-gray-40);
+    }
+
+    #minimonth-pane toolbarbutton:hover,
+    #minimonth-pane toolbarbutton:hover:active {
+        color: var(--primary-gray-20);
+        background: transparent;
+    }
+
+    .minimonth-row-head {
+        color: var(--primary-gray-30);
+    }
+
+    .minimonth-week {
+        color: var(--primary-gray-40);
+        background: transparent;
+        border: none;
+    }
+
+    .minimonth-day[interactive][today="true"]  {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .minimonth-day:hover[interactive] {
+        color: var(--primary-whiter);
+        background: var(--primary-gray-60);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .minimonth-day:hover:active[interactive] {
+        color: var(--primary-gray-20);
+        background: var(--primary-gray-60);
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2) inset;
+    }
+
+    .minimonth-day[othermonth="true"] {
+        color: var(--primary-gray-40);
+        background: transparent;
+    }
+
+    .minimonth-day[today="true"] {
+        color: var(--primary-white) !important;
+        background: var(--primary-gray-60);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+    .minimonth-day[today="true"]:hover {
+        color: var(--primary-whiter) !important;
+        background: var(--primary-gray-60);
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 02) inset,
+                    0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .minimonth-day[selected="true"],
+    .minimonth-day[selected="true"][today="true"] {
+        color: var(--primary-white) !important;
+        background: var(--primary-gray-60);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.2) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+        transition: 50ms ease-in-out;
+    }
+
+    .minimonth-day[selected="true"]:hover,
+    .minimonth-day[selected="true"]:hover,
+    .minimonth-day[selected="true"][today="true"]:hover {
+        color: var(--primary-whiter) !important;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2) inset,
+                    0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+        transition: 50ms ease-in-out;
+    }
+
+    /* Calendar List */
+    .calendar-list-header {
+        color: var(--primary-gray-20);
+        background: transparent;
+        border-top: 1px solid var(--primary-gray-50);
+    }
+
+    .toolbarbutton-1.calendar-list-create .toolbarbutton-icon {
+        filter: brightness(0%) saturate(0%) invert(90%) sepia(14%) saturate(630%) hue-rotate(338deg) brightness(97%) contrast(85%);
+    }
+
+    .toolbarbutton-1.calendar-list-create {
+        background-color: var(--primary-gray-60);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.2) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .toolbarbutton-1.calendar-list-create:hover {
+        background-color: var(--primary-gray-80) !important;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.2) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .toolbarbutton-1.calendar-list-create:hover:active {
+        background-color: var(--primary-gray-80) !important;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.2) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+    }
+
+    #calendar-list > li {
+        color: var(--primary-gray-30) !important;
+        background-color: var(--primary-black);
+        border: 1px solid transparent;
+    }
+
+    #calendar-list > li:hover {
+        border: 1px solid var(--primary-gray-50);
+    }
+
+    #calendar-list > li.selected {
+        border: 1px solid var(--primary-gray-50) !important;
+    }
+
+    #calendar-list > li > button.calendar-enable-button #calendar-list > li > button.calendar-enable-button,
+    #calendar-list > li > button.calendar-enable-button {
+        color: var(--primary-green-900) !important;
+        background: var(--primary-highlight-green) !important;
+    }
+
+    /* Big Calendar */
+    .navigation-inner-box {
+        color: var(--primary-gray-20);
+        padding: 8px;
+    }
+
+    #calendar-nav-control {
+        --calview-tabline-color: transparent;
+        --calview-border-bottom-color: transparent;
+    }
+
+    .navigation-inner-box toolbarbutton.previous-view-button,
+    .navigation-inner-box toolbarbutton.next-view-button  {
+        color: var(--primary-gray-20);
+    }
+
+    .navigation-inner-box toolbarbutton.previous-view-button:hover,
+    .navigation-inner-box toolbarbutton.previous-view-button:hover:active,
+    .navigation-inner-box toolbarbutton.next-view-button:hover,
+    .navigation-inner-box toolbarbutton.next-view-button:hover:active  {
+        color: var(--primary-gray-10);
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    radio.calview:not([selected="true"]) {
+        color: var(--primary-gray-30) !important;
+        background: transparent;
+        border: 1px solid var(--primary-gray-30);
+        font-weight: normal;
+    }
+
+    radio.calview:not([selected="true"]):hover,
+    radio.calview:not([selected="true"]):hover:active {
+        color: var(--primary-white) !important;
+        background: transparent !important;
+        border: 1px solid var(--primary-white);
+    }
+
+    radio.calview:nth-of-type(3n+1)[selected="true"] {
+        color: var(--primary-yellow-700) !important;
+        background: var(--primary-gray-70) !important;
+        border: 1px solid var(--primary-yellow-700);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.3) inset;
+        font-weight: normal;
+    }
+
+    radio.calview:nth-of-type(3n+2)[selected="true"] {
+        color: var(--primary-red-500) !important;
+        background: var(--primary-gray-70) !important;
+        border: 1px solid var(--primary-red-500);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.3) inset;
+        font-weight: normal;
+    }
+
+    radio.calview:nth-of-type(3n+3)[selected="true"] {
+        color: var(--primary-blue-500) !important;
+        background: var(--primary-gray-70) !important;
+        border: 1px solid var(--primary-blue-500);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.3) inset;
+        font-weight: normal;
+    }
+
+    /* Big Calendar Corner */
+    .multiday-header-corner {
+        border-top: 1px solid var(--viewBorderColor);
+    }
+
+    /* Big Calendar - Month View */
+    .calendar-month-day-box-other-month[selected="true"],
+    .calendar-month-day-box-current-month[selected="true"] {
+        border-top: 2px solid var(--primary-yellow-300);
+        color: var(--primary-white) !important;
+    }
+
+    .monthtable td > :is(.calendar-month-day-box-current-month[relation="today"], .calendar-month-day-box-day-off[relation="today"],
+    .calendar-month-day-box-other-month[relation="today"]) {
+        border-top: 2px solid var(--primary-blue-300);
+        color: var(--primary-white) !important;
+    }
+
+    /* Event Box */
+    calendar-month-day-box-item.calendar-color-box,
+    calendar-event-box.calendar-color-box,
+    calendar-editable-item.calendar-color-box {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.25) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    calendar-month-day-box-item[selected="true"].calendar-color-box, calendar-event-box[selected="true"].calendar-color-box,
+    calendar-editable-item[selected="true"].calendar-color-box {
+        /*
+        this background var(--primary-highlight-yellow) on top of itself,
+        on top of var(--primary-white)
+        */
+        background: var(--primary-highlight-yellow) !important;
+        color: var(--primary-gray-100) !important;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.45) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.15),
+                    0px 0px 0px 4px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Timebar Now */
+    .multiday-timebar-now-indicator {
+        background: var(--primary-red-300);
+    }
+
+    .multiday-grid:not(.multiday-grid-rotated) .timeIndicator {
+        border-block-start: 2px solid var(--primary-red-300); 
+    }
+}

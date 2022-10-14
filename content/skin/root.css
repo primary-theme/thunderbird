@@ -1,3 +1,7 @@
+/*————————————————————————————————————————————————————————
+                    Sizing + Light Mode
+————————————————————————————————————————————————————————*/
+
 :root, 
 body, 
 #messengerWindow {
@@ -146,7 +150,7 @@ toolbarbutton:hover:active {
 :root {
     --autocomplete-popup-url-color: -moz-nativehyperlinktext;
     --tabline-color: var(--primary-gray-40);
-    --glassShadowColor: hsla(240, 5%, 5%, 0.3);
+    --glassShadowColor: hsla(240, 5%, 5%, 0.3); /* TODO */
     --new-folder-color: -moz-hyperlinktext;
     --noselect-folder-color: GrayText;
     --toolbar-non-lwt-bgcolor: -moz-dialog;
@@ -163,12 +167,166 @@ toolbarbutton:hover:active {
     :root {
         --lwt-tabs-border-color: transparent;
         --tabline-color: var(--primary-gray-40);
-        --toolbar-non-lwt-bgcolor: #f9f9fa;
-        --toolbar-non-lwt-textcolor: #0c0c0d;
+        --toolbar-non-lwt-bgcolor: #f9f9fa; /* TODO */
+        --toolbar-non-lwt-textcolor: #0c0c0d; /* TODO */
         --toolbar-non-lwt-bgimage: none;
         --panel-separator-color: var(--primary-gray-40);
         --autocomplete-popup-url-color: var(--primary-gray-80);
         --splitter-color: #var(--primary-gray-40);
         --select-focus-text-color: var(--primary-gray-100);
+    }
+}
+
+/*————————————————————————————————————————————————————————
+                        Dark Mode
+————————————————————————————————————————————————————————*/
+@media (prefers-color-scheme: dark) {
+    :root, 
+    body, 
+    #messengerWindow {
+        --lwt-accent-color: var(--primary-gray-90) !important;
+
+        --sidebar-text-color: var(--primary-white);
+        --sidebar-background-color: var(--primary-gray-90);
+        --toolbar-bgcolor: var(--primary-gray-70);
+
+        --button-bgcolor: transparent;
+        --button-hover-bgcolor: transparent;
+        --button-active-bgcolor: transparent;
+        --button-primary-bgcolor: var(--primary-gray-30);
+        --button-primary-hover-bgcolor: var(--primary-gray-50);
+        --button-primary-active-bgcolor: var(--primary-gray-50);
+        --button-primary-color: var(--primary-whiter);
+
+        --error-text-color: var(--primary-red-300);
+
+        --input-bgcolor: var(--primary-gray-90);
+        --input-color: var(--primary-gray-white);
+        --input-border-color: var(--primary-gray-50);
+
+        --autocomplete-popup-separator-color: var(--primary-gray-50);
+
+        --panel-banner-item-update-supported-bgcolor: var(--primary-green-500);
+        --panel-banner-item-info-icon-bgcolor: var(--primary-blue-300);
+        
+        --lwt-tabs-border-color: transparent;
+        --sidebar-border-color: var(--primary-gray-50) !important;
+
+        /* TODO  I don't know where this is applying lol */
+        /* --focus-outline: 1px solid var(--focus-outline-color) !important;
+        --focus-outline-color: var(--primary-highlight-blue) !important;
+        --focus-outline-offset: 1px !important; */
+
+        --checkbox-border-color: var(--primary-gray-50);
+        --checkbox-unchecked-bgcolor: var(--primary-black);
+        --checkbox-unchecked-hover-bgcolor: var(--primary-gray-80);
+        --checkbox-unchecked-active-bgcolor: var(--primary-blacker);
+        --checkbox-checked-border-color: rgba(0, 0, 0, 0.5);
+        --checkbox-checked-color: var(--primary-whiter);
+        --checkbox-checked-bgcolor: var(--primary-green-500);
+        --checkbox-checked-hover-bgcolor: var(--primary-green-700);
+        --checkbox-checked-active-bgcolor: var(--primary-green-900);
+
+        --toolbarbutton-border-radius: 4px;
+
+        --toolbarbutton-hover-background: var(--primary-gray-50);
+        --toolbarbutton-hover-bordercolor: rgba(0, 0, 0, 0.5);
+
+        --toolbarbutton-header-bordercolor: rgba(0, 0, 0, 0.5);
+
+        --toolbarbutton-active-background: var(--primary-gray-50);
+        --toolbarbutton-active-bordercolor: rgba(0, 0, 0, 0.5);
+        --toolbarbutton-active-boxshadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.5) inset, 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+
+        --toolbarbutton-checked-background: var(--primary-highlight-blue);
+
+        --toolbarbutton-icon-fill-attention: var(--primary-blue-300);
+
+        --toolbarseparator-color: var(--primary-gray-50);
+
+        --toolbar-field-focus-border-color: var(--primary-gray-50);
+        --toolbar-field-highlight: var(--primary-highlight-blue);
+        --toolbar-field-highlight-color: var(--primary-highlight-blue);
+        
+        --item-focus-selected-border-color: var(--primary-gray-50);
+        --default: var(--primary-highlight-violet);
+        --primary: var(--primary-highlight-violet);
+    }
+
+    *::selection,
+    body::selection,
+    body div::selection {
+        color: var(--primary-white) !important;
+        background: var(--primary-highlight-blue) !important;
+    }
+
+    /* LW-themes enabled */
+    :root:-moz-lwtheme {
+        --lwt-text-color: var(--primary-gray-10);
+        color: var(--primary-gray-10);
+        --button-background: var(--primary-gray-30);
+        --button-background-hover: var(--primary-gray-50);
+        --button-background-active: var(--primary-gray-50);
+        --toolbar-color: var(--lwt-text-color, inherit);
+        --toolbar-bgcolor: var(--primary-gray-70);
+        --toolbar-bgimage: none;
+        --toolbarbutton-icon-fill-opacity: 1;
+        --autocomplete-popup-url-color: var(--primary-gray-10);
+        --toolbar-field-background-color: var(--primary-gray-10);
+        --toolbar-field-border-color: var(--primary-gray-50);
+    }
+
+    :root[lwt-tree] {
+        --splitter-color: var(--primary-gray-50);
+        /* --select-focus-text-color: var(--primary-black); */
+        --new-focused-folder-color: var(--primary-white);
+        --row-grouped-header-bg-color: var(--primary-gray-90);
+        --row-grouped-header-bg-color-selected: var(--primary-gray-70);
+        --sidebar-highlight-background-color: var(--primary-gray-60);
+    }
+
+    #FindToolbar:-moz-lwtheme,
+    .themeable-full:-moz-lwtheme,
+    .themeable-brighttext:-moz-lwtheme {
+        --toolbarbutton-hover-background: var(--primary-gray-80);
+        --toolbarbutton-hover-bordercolor: rgba(0, 0, 0, 0.5);
+        --toolbarbutton-active-background: var(--primary-gray-80);
+        --toolbarbutton-active-bordercolor: rgba(0, 0, 0, 0.3);
+        --toolbarbutton-active-boxshadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.5) inset,
+        0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+        --toolbarbutton-checked-background: var(--primary-blue-300);
+    }
+
+    /* TODO */
+    /* Variables File No. 2 */
+
+    :root {
+        --autocomplete-popup-url-color: -moz-nativehyperlinktext;
+        --tabline-color: var(--primary-gray-50);
+        --glassShadowColor: hsla(240, 5%, 5%, 0.3); /* TODO */
+        --new-folder-color: -moz-hyperlinktext;
+        --noselect-folder-color: GrayText;
+        --toolbar-non-lwt-bgcolor: -moz-dialog;
+        --toolbar-non-lwt-textcolor: -moz-dialogText;
+        --toolbar-non-lwt-bgimage: transparent;
+        --chrome-content-separator-color: ThreeDShadow;
+        --row-grouped-header-bg-color: var(--primary-gray-70);
+        --row-grouped-header-bg-color-selected: var(--primary-gray-70);
+        --panel-separator-color: var(--primary-gray-50);
+        --splitter-color: var(--primary-gray-50);
+    }
+    
+    @media (-moz-windows-default-theme) {
+        :root {
+            --lwt-tabs-border-color: transparent;
+            --tabline-color: var(--primary-gray-50);
+            --toolbar-non-lwt-bgcolor: #f9f9fa; /* TODO */
+            --toolbar-non-lwt-textcolor: #0c0c0d; /* TODO */
+            --toolbar-non-lwt-bgimage: none;
+            --panel-separator-color: var(--primary-gray-50);
+            --autocomplete-popup-url-color: var(--primary-gray-20);
+            --splitter-color: #var(--primary-gray-80);
+            --select-focus-text-color: var(--primary-white);
+        }
     }
 }
