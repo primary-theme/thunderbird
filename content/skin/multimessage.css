@@ -2,7 +2,9 @@
 @import url(chrome://Primary/content/skin/colors.css);
 @import url(chrome://Primary/content/skin/fonts.css);
 
-#headingWrapper {
+/* BUG TODO */
+
+/* #headingWrapper {
     color: var(--primary-gray-100);
     background-color: var(--primary-gray-10) !important;
     padding: 8px 8px;
@@ -16,4 +18,4 @@
 
 #message_list > li {
     border-bottom-color: var(--primary-gray-40) !important;
-}
+} */

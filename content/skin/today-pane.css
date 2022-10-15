@@ -2,6 +2,10 @@
 @import url(chrome://Primary/content/skin/colors.css);
 @import url(chrome://Primary/content/skin/fonts.css);
 
+/*————————————————————————————————————————————————————————
+                    Sizing + Light Mode
+————————————————————————————————————————————————————————*/
+
 #today-pane-panel {
     color: var(--primary-gray-80);
 }
@@ -121,4 +125,108 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1) inset,
                 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+/*————————————————————————————————————————————————————————
+                    Dark Mode
+————————————————————————————————————————————————————————*/
+
+@media (prefers-color-scheme: dark) {
+    :root[lwt-tree] #today-pane-panel > vbox {
+        background: var(--primary-gray-90);
+    }
+
+    #today-pane-panel {
+        color: var(--primary-gray-20);
+    }
+    
+    /* Today Subpane */
+    .today-subpane {
+        color: var(--primary-white);
+        background: var(--primary-gray-70);
+    }
+    
+    /* Agenda */
+    .agenda-toolbar {
+        background: var(--primary-gray-90);
+    }
+    
+    #agenda {
+        color: var(--primary-gray-10);
+        background: var(--primary-gray-70);
+    }
+    
+    #agenda .agenda-listitem .agenda-listitem-details {
+        color: var(--primary-gray-10);
+        border: 1px solid transparent;
+    }
+    
+    #agenda:focus .agenda-listitem.selected .agenda-listitem-details {
+        color: var(--primary-white);
+        background: var(--primary-blacker);
+        border: 1px solid var(--primary-gray-40);
+    }
+    
+    /* Border Fixes */
+    #today-pane-panel:-moz-lwtheme > .sidebar-header,
+    #today-pane-panel > .sidebar-header {
+        border-top: 1px solid var(--primary-gray-50);
+        border-bottom: 1px solid var(--primary-gray-50);
+    }
+    
+    #today-pane-panel,
+    .today-subpane {
+        border-bottom: 1px solid var(--primary-gray-50);
+    }
+    
+    /* Buttons */
+    #today-pane-panel toolbarbutton {
+        color: var(--primary-gray-20);
+    }
+    
+    #today-pane-panel toolbarbutton:hover,
+    .miniday-nav-buttons:not([disabled="true"]):hover,
+    #miniday-dropdown-button:not([disabled="true"]):hover,
+    #today-pane-panel toolbarbutton:hover:active,
+    .miniday-nav-buttons:not([disabled="true"]):hover:active,
+    #miniday-dropdown-button:not([disabled="true"]):hover:active {
+        color: var(--primary-gray-10) !important;
+        background: transparent !important;
+        border-color: transparent;
+        box-shadow: none;
+    }
+    
+    #today-pane-panel toolbarbutton.today-closebutton:hover {
+        color: var(--primary-white) !important;
+        background: var(--primary-gray-60) !important;
+    }
+    
+    #today-pane-panel toolbarbutton.today-closebutton:hover:active {
+        color: var(--primary-gray-20) !important;
+        background: var(--primary-gray-50) !important;
+    }
+    
+    #todaypane-new-event-button:not([disabled="true"]) {
+        color: var(--primary-white) !important;
+        background-color: var(--primary-gray-60);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.25) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    #todaypane-new-event-button:not([disabled="true"]):hover {
+        color: var(--primary-white) !important;
+        background-color: var(--primary-gray-80) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.25) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    #todaypane-new-event-button:not([disabled="true"]):hover:active {
+        color: var(--primary-white) !important;
+        background-color: var(--primary-gray-80) !important;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+    }
 }

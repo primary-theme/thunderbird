@@ -81,12 +81,12 @@ Due to some restrictions or unfound solutions for implementing certain design qu
     - If you're using Primary in Light Mode:
         1. Set your Text Color to an RGB of `47, 32, 12` respectively.
         2. Set your Background Color to an RGB of `250, 248, 245` respectively.
-        3. Set *"Override the colors specificed by the content with my selections above:"* to **Never**.
+        3. Set *"Override the colors specificed by the content with my selections above:"* to **Always**.
         4. To confirm changes, press OK.
     - If you're using Primary in Dark Mode:
-        1. Set your Text Color to an RGB of `n` respectively.
-        2. Set your Background Color to an RGB of `n` respectively.
-        3. Set *"Override the colors specificed by the content with my selections above:"* to **Never**.
+        1. Set your Text Color to an RGB of `246, 155, 216` respectively.
+        2. Set your Background Color to an RGB of `44, 38, 33` respectively.
+        3. Set *"Override the colors specificed by the content with my selections above:"* to **Always**.
         4. To confirm changes, press OK.
 5. **(OPTIONAL)** If you'd like to use the font that Primary uses for its interface for your messages and composer, follow these steps:
     1. Download and install the [Inter](https://github.com/rsms/inter/releases/download/v3.19/Inter-3.19.zip) font (Pressing the link automatically downloads the `.zip` file from the official Inter Github Release).

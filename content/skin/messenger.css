@@ -517,7 +517,7 @@ button.tab-close-button {
 
     /* Close Tabs */
     #tabs-toolbar:not([brighttext]) button.tab-close-button:not([selected="true"]):hover {
-        background-color: var(--primary-gray-40);
+        background-color: var(--primary-gray-60);
         color: var(--primary-gray-20);
     }
     

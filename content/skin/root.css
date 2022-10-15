@@ -186,7 +186,7 @@ toolbarbutton:hover:active {
     #messengerWindow {
         --lwt-accent-color: var(--primary-gray-90) !important;
 
-        --sidebar-text-color: var(--primary-white);
+        --sidebar-text-color: var(--primary-white) !important;
         --sidebar-background-color: var(--primary-gray-90);
         --toolbar-bgcolor: var(--primary-gray-70);
 
@@ -223,8 +223,8 @@ toolbarbutton:hover:active {
         --checkbox-unchecked-active-bgcolor: var(--primary-blacker);
         --checkbox-checked-border-color: rgba(0, 0, 0, 0.5);
         --checkbox-checked-color: var(--primary-whiter);
-        --checkbox-checked-bgcolor: var(--primary-green-500);
-        --checkbox-checked-hover-bgcolor: var(--primary-green-700);
+        --checkbox-checked-bgcolor: var(--primary-green-700);
+        --checkbox-checked-hover-bgcolor: var(--primary-green-500);
         --checkbox-checked-active-bgcolor: var(--primary-green-900);
 
         --toolbarbutton-border-radius: 4px;
@@ -282,7 +282,7 @@ toolbarbutton:hover:active {
         --new-focused-folder-color: var(--primary-white);
         --row-grouped-header-bg-color: var(--primary-gray-90);
         --row-grouped-header-bg-color-selected: var(--primary-gray-70);
-        --sidebar-highlight-background-color: var(--primary-gray-60);
+        --sidebar-highlight-background-color: var(--primary-gray-60) !important;
     }
 
     #FindToolbar:-moz-lwtheme,

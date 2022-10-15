@@ -84,8 +84,8 @@ menupopup:not([type="arrow"]) {
         --menu-color: var(--primary-gray-20);
         --menu-border-color: var(--primary-gray-50);
         --menu-background-color: var(--primary-gray-90);
-        --panel-item-hover-bgcolor: var(--primary-gray-70);
-        --panel-item-active-bgcolor: var(--primary-gray-black);
+        --panel-item-hover-bgcolor: var(--primary-gray-80);
+        --panel-item-active-bgcolor: var(--primary-black);
         --arrowpanel-dimmed: var(--primary-gray-50);
         --arrowpanel-dimmed-further: var(--primary-gray-60);
         --panel-separator-zap-gradient: linear-gradient(var(--primary-gray-50));

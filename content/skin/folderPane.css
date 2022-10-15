@@ -78,8 +78,8 @@ treechildren::-moz-tree-row(modeHeader),
     :root,
     body,
     #folderTree {
-        --primary-fill: color-mix(in srgb, var(--primary-gray-30) 20%, transparent);
-        --primary-stroke: var(--primary-gray-30);
+        --primary-fill: color-mix(in srgb, var(--primary-gray-10) 20%, transparent) !important;
+        --primary-stroke: var(--primary-gray-10);
     
         --folder-color-inbox: var(--primary-red-700);
         --folder-color-draft: var(--primary-blue-500);
@@ -95,10 +95,11 @@ treechildren::-moz-tree-row(modeHeader),
         --folder-color-folder-filter: var(--primary-green-700);
         --folder-color-folder-rss: var(--primary-orange-700);
 
-        --new-folder-color: var(--primary-white);
+        --new-folder-color: var(--primary-gray-10) !important;
         --new-focused-folder-color: var(--primary-gray-30);
 
-        --sidebar-highlight-text-color: var(--primary-gray-10) !important;
+        --sidebar-text-color: var(--primary-gray-10) !important;
+        --sidebar-highlight-text-color: var(--primary-whiter) !important;
         --sidebar-highlight-border-color: var(--primary-gray-40);
         --sidebar-highlight-background-color: var(--primary-gray-70);
     }
@@ -115,11 +116,21 @@ treechildren::-moz-tree-row(modeHeader),
         border-bottom: 1px solid var(--primary-gray-50) !important;
     }
 
+    #folderTree treecol:not([hideheader="true"]),
+    #folderTree treecolpicker:not([hideheader="true"])  {
+        color: var(--primary-gray-20);
+        border-top: 1px solid var(--primary-gray-50);
+    }
+
+    #folderTree treecol:not([hideheader="true"]) {
+        border-inline-end: none !important;
+    }
+
     #folderTree > treechildren::-moz-tree-row {
         height: 2rem;
         margin: 2px 4px;
         border-radius: 3px;
-        background-color: var(--primary-gray-60);
+        background-color: var(--primary-gray-70);
         box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.3) inset,
                     0px 1px 1px 0px rgba(0, 0, 0, 0.25);
     }
@@ -129,8 +140,8 @@ treechildren::-moz-tree-row(modeHeader),
     }
     
     #folderTree > treechildren::-moz-tree-row(folderNameCol, selected, focus) {
-        background-color: var(--primary-white) !important;
-        border: 1px solid var(--primary-gray-70);
+        background-color: var(--primary-gray-60) !important;
+        border: 1px solid var(--primary-gray-40);
         box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.3) inset,
                     0px 1px 1px 0px rgba(0, 0, 0, 0.25) !important;
     }

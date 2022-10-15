@@ -2,6 +2,8 @@
 @import url(chrome://Primary/content/skin/colors.css);
 @import url(chrome://Primary/content/skin/fonts.css);
 
+/* message-bar is the popup banners that appear in emails/events
+   see Thunderbird's message-bar.css file */
 
 /* BUG */
 /* :host {
