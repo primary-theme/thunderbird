@@ -5,9 +5,9 @@
 /*——————— Inner ———————*/
 @import url(chrome://Primary/content/skin/messenger.css); /* used as Fallback */
 
-/*————————————————————————————————————————————————————————
-                    Sizing + Light Mode
-————————————————————————————————————————————————————————*/
+/*———————————————————————————————————————
+            Sizing + Light Mode
+———————————————————————————————————————*/
 
 /*——————— menubar (File, Edit, etc.) ———————*/
 #menubar-items {
@@ -343,9 +343,9 @@ toolbarbutton.formatting-button:not([disabled="true"]):is([open="true"],:hover:a
     border-top: 1px solid var(--primary-gray-40) !important;
 }
 
-/*————————————————————————————————————————————————————————
-                    Dark Mode
-————————————————————————————————————————————————————————*/
+/*———————————————————————————————————————
+                Dark Mode
+———————————————————————————————————————*/
 
 @media (prefers-color-scheme: dark) {
     /*——————— menubar (File, Edit, etc.) ———————*/

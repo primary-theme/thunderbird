@@ -10,14 +10,14 @@
 @import url(chrome://Primary/content/skin/messageHeader.css);
 @import url(chrome://Primary/content/skin/multimessage.css);
 @import url(chrome://Primary/content/skin/menuPopup.css);
-@import url(chrome://Primary/content/skin/messagebar.css);
+@import url(chrome://Primary/content/skin/message-bar.css);
 
 @import url(chrome://Primary/content/skin/today-pane.css);
 @import url(chrome://Primary/content/skin/calendar-views.css);
 
-/*————————————————————————————————————————————————————————
-                    Sizing + Light Mode
-————————————————————————————————————————————————————————*/
+/*———————————————————————————————————————
+            Sizing + Light Mode
+———————————————————————————————————————*/
 
 /*——————— menubar (File, Edit, etc.) ———————*/
 #menubar-items {
@@ -368,9 +368,9 @@ button.tab-close-button {
     box-shadow: none;
 }
 
-/*————————————————————————————————————————————————————————
-                        Dark Mode
-————————————————————————————————————————————————————————*/
+/*———————————————————————————————————————
+                Dark Mode
+———————————————————————————————————————*/
 @media (prefers-color-scheme: dark) {
     /*——————— menubar (File, Edit, etc.) ———————*/
     #navigation-toolbox:-moz-lwtheme,

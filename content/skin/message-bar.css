@@ -2,11 +2,12 @@
 @import url(chrome://Primary/content/skin/colors.css);
 @import url(chrome://Primary/content/skin/fonts.css);
 
-/* message-bar is the popup banners that appear in emails/events
-   see Thunderbird's message-bar.css file */
+/*———————————————————————————————————————
+            Sizing + Light Mode
+———————————————————————————————————————*/
 
 /* BUG */
-/* :host {
+:host {
     --message-bar-background-color: var(--in-content-page-background);
     --message-bar-text-color: var(--in-content-text-color);
 }
@@ -31,4 +32,12 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset,
                 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/*———————————————————————————————————————
+                Dark Mode
+———————————————————————————————————————*/
+
+/* @media (prefers-color-scheme: dark) {
+
 } */
