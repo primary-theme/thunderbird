@@ -69,25 +69,26 @@ Thank you for understanding! 🙏
 
 ## 📥 Complete Guide to Install Primary for Thunderbird
 
-Due to some restrictions or unfound solutions for implementing certain design queues for the theme, there are extra steps needed to complete the Primary experience. Here's the full guide:
+Due to some restrictions or unfound solutions in implementing some parts of the design, there are extra steps needed to complete the Primary experience. Here's the full guide:
 
 1. Start by setting your Thunderbird theme to default.
     - If you plan to use Primary in Light Mode, install Thunderbird's Default Light Theme.
     - If you plan to use Primary in Dark Mode, install Thunderbird's Default Dark Theme.
     - *Do not install the System Auto Default Theme. Primary breaks with that option, sorry!*
 2. Next, install Primary via the Thunderbird Add-Ons store.
-3. Next, open Settings by pressing the gear icon on the Left Toolbar.
+3. Then, Go back to Thunderbird and open Settings by pressing the gear icon on the Left Toolbar.
 4. Under General → Language and Appearance → press the **Colors** button.
     - If you're using Primary in Light Mode:
-        1. Set your Text Color to an RGB of `47, 32, 12` respectively.
-        2. Set your Background Color to an RGB of `250, 248, 245` respectively.
+        1. Set your Text Color to an RGB of `47, 32, 12` respectively. This should be a dark brown color.
+        2. Set your Background Color to an RGB of `250, 248, 245` respectively. This should be an ivory-like color.
         3. Set *"Override the colors specificed by the content with my selections above:"* to **Always**.
         4. To confirm changes, press OK.
     - If you're using Primary in Dark Mode:
-        1. Set your Text Color to an RGB of `246, 155, 216` respectively.
-        2. Set your Background Color to an RGB of `44, 38, 33` respectively.
+        1. Set your Text Color to an RGB of `246, 230, 213` respectively. This should be an ivory-like color.
+        2. Set your Background Color to an RGB of `44, 38, 33` respectively. This should be a dark brown color.
         3. Set *"Override the colors specificed by the content with my selections above:"* to **Always**.
         4. To confirm changes, press OK.
+    - This will color plain text/HTML messages. Though, sometimes it doesn't work because the message's styling 
 5. **(OPTIONAL)** If you'd like to use the font that Primary uses for its interface for your messages and composer, follow these steps:
     1. Download and install the [Inter](https://github.com/rsms/inter/releases/download/v3.19/Inter-3.19.zip) font (Pressing the link automatically downloads the `.zip` file from the official Inter Github Release).
     2. Once installed, open Settings by pressing the gear icon on the Left Toolbar.

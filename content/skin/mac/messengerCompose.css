@@ -69,7 +69,7 @@
 /*——————— message header ———————*/
 /* toolbar */
 #MsgHeadersToolbar {
-    padding: 16px 16px;
+    padding: 12px 12px;
     padding-bottom: 6px;
 }
 
@@ -78,11 +78,531 @@ label:not(.toolbarbutton-1 label, .toolbarbutton-menubutton-button label) {
     color: var(--primary-gray-70);
 }
 
+/* dropdown */
+select,
+#msgIdentity,
+#msgIdentity:hover {
+    color: var(--primary-gray-100);
+    background: var(--primary-whiter) !important;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.1) inset,
+                0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+    transition: 50ms ease-in-out;
+}
+
+/* recipient buttons */
+#extraAddressRowsArea.addressingWidget-separator::before {
+    display: none;
+}
+
+.recipient-button {
+    font-weight: bold;
+}
+
+.recipient-button {
+    color: var(--primary-gray-70);
+}
+
+.recipient-button:hover, 
+.recipient-button:hover:active {
+    color: var(--primary-gray-100);
+}
+
+button#extraAddressRowsMenuButton {
+    color: var(--primary-gray-60);
+}
+
+button#extraAddressRowsMenuButton:hover,
+button#extraAddressRowsMenuButton:hover:active {
+    color: var(--primary-gray-100);
+}
+
+button#extraAddressRowsMenuButton[aria-expanded="true"] {
+    color: var(--primary-gray-100);
+    background: transparent;
+    box-shadow: none;
+}
+
+.remove-field-button {
+    color: var(--primary-whiter);
+    background: var(--primary-red-300) !important;
+    border-radius: 16px;
+}
+
+.remove-field-button:hover {
+    background: var(--primary-red-500) !important;
+}
+
+/* textbox */
+textbox,
+.address-container,
+#msgSubject {
+    color: var(--primary-gray-100) !important;
+    background: var(--primary-gray-30) !important;
+    border: 1px solid var(--primary-gray-40);
+    transition: 50ms ease-in-out;
+}
+
+textbox:hover,
+.address-container:hover,
+#msgSubject:hover {
+    border: 1px solid var(--primary-gray-50);
+    transition: 50ms ease-in-out;
+}
+
+textbox[focused="true"],
+.address-container[focused="true"],
+#msgSubject:focus {
+    background-color: var(--primary-white) !important;
+    border: 1px solid var(--primary-gray-50);
+    box-shadow: 0px 0px 0px 3px var(--primary-gray-40) !important;
+    transition: 50ms ease-in-out;
+}
+
+/* address-pill */
+/* BUG when editing an invalid-address the text is unreadable */
+.address-pill {
+    background: var(--primary-gray-10);
+    border: none;
+}
+
+.address-pill label {
+    color: var(--primary-black) !important;
+}
+
+.address-pill:not(.address-pill.invalid-address, .address-pill .key-issue).editing,
+.address-pill:hover:not(.editing),
+.address-pill:active:not(.editing),
+.address-pill:focus:not(.editing) {
+    color: var(--primary-blue-500);
+    background-color: var(--primary-highlight-blue) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.address-pill:not(.address-pill.invalid-address, .address-pill .key-issue)[selected],
+.address-pill:not(.address-pill.invalid-address, .address-pill .key-issue).editing label,
+.address-pill[selected]:not(.editing) label {
+    color: var(--primary-blue-500) !important; 
+    background-color: var(--primary-highlight-blue) !important;
+    transition: 50ms ease-in-out;
+}
+
+.address-pill[selected]:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill[selected]:not(.editing) {
+    color: var(--primary-blue-500) !important;
+    background-color: var(--primary-highlight-blue) !important;
+    border: none;
+    box-shadow: none;
+    transition: 50ms ease-in-out;
+}
+
+.address-pill.invalid-address,
+.address-pill.invalid-address[selected]:not(.editing),
+.address-pill.invalid-address:hover:not(.editing),
+.address-pill.invalid-address:focus:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.invalid-address[selected]:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.invalid-address:hover:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.invalid-address:focus:not(.editing) {
+    background-color: var(--primary-red-300) !important;
+    box-shadow: none !important;
+    border: none !important;
+    transition: 50ms ease-in-out;
+}
+
+.address-pill.invalid-address label {
+    color: var(--primary-white) !important;
+}
+
+.address-pill.key-issue,
+.address-pill.key-issue:hover:not(.editing),
+.address-pill.key-issue:focus:not(.editing),
+.address-pill.key-issue[selected]:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.key-issue[selected]:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.key-issue:hover:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.key-issue:focus:not(.editing) {
+    background-color: var(--primary-yellow-300) !important;
+    box-shadow: none !important;
+    border: none !important;
+    transition: 50ms ease-in-out;
+}
+
+.address-pill.key-issue label {
+    color: var(--primary-black) !important;
+}
+
+.address-pill[selected]:not(.editing),
+.address-pill.invalid-address[selected]:not(.editing),
+.address-pill.key-issue[selected]:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill[selected]:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.invalid-address[selected]:not(.editing),
+#MsgHeadersToolbar[brighttext] .address-pill.key-issue[selected]:not(.editing) {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+}
+
+/*——————— formatting toolbar ———————*/
+/* format toolbar */
+#FormatToolbar {
+    margin: 12px 12px;
+    margin-top: 6px;
+}
+
+/* format dropdown */
+#ParagraphSelect,
+#ParagraphSelect:hover,
+#FontFaceSelect,
+#FontFaceSelect:hover {
+    color: var(--primary-gray-100);
+    background: var(--primary-whiter) !important;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.1) inset,
+                0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+    transition: 50ms ease-in-out;
+    padding: 5px 5px !important;
+    margin-right: 8px;
+}
+
+/* color picker */
+.color-button,
+.color-button[disabled="true"] {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 18px;
+    height: 16px;
+}
+
+/* buttons */
+toolbarbutton.formatting-button  {
+    color: var(--primary-gray-80);
+    margin: 0px 3px;
+    padding: 0px 4px;
+}
+
+toolbarbutton.formatting-button:not([disabled="true"]):hover {
+    color: var(--primary-gray-100);
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+toolbarbutton.formatting-button:not([disabled="true"]):is([open="true"],[checked="true"],:hover:active) {
+    color: var(--primary-blue-700);
+    background: var(--primary-highlight-blue) !important;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+toolbarbutton.formatting-button:not([disabled="true"]):is([open="true"],:hover:active) {
+    color: var(--primary-blue-700);
+    background: var(--primary-highlight-blue) !important;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* space grouping buttons */
+#FontFaceSelect {
+    margin-right: 24px !important;
+}
+
+#AbsoluteFontSizeButton,
+#boldButton,
+#ulButton,
+#AlignPopupButton {
+    margin-left: 24px;
+}
+
+/*——————— status bar ———————*/
+#status-bar {
+    border-top: 1px solid var(--primary-gray-40) !important;
+}
 
 /*——————————————————————————————————————
                 Dark Mode
 ——————————————————————————————————————*/
 
 @media (prefers-color-scheme: dark) {
-    
+    #compose-toolbox > toolbar {
+        background: var(--primary-gray-70);
+        border-top: 1px solid var(--primary-gray-50) !important;
+    }
+
+    /* Buttons */
+    .toolbarbutton-1,
+    .toolbarbutton-1:is([disabled="true"]),
+    .toolbarbutton-1:not([disabled="true"]),
+    .toolbarbutton-menubutton-button,
+    .toolbarbutton-menubutton-dropmarker {
+        color: var(--primary-white) !important;
+    }
+
+    .toolbarbutton-1 {
+        margin: 6px 4px;
+    }
+
+    .toolbarbutton-1,
+    .toolbarbutton-menubutton-button {
+        border-radius: 16px !important;
+    }
+
+    .toolbarbutton-1 {
+        --toolbarbutton-icon-fill: var(--primary-white);
+        font-weight: bold;
+
+        background-color: var(--primary-gray-30) !important;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.25);
+    }
+
+    .toolbarbutton-1:hover {
+        background-color: var(--primary-gray-50) !important;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.15) inset,
+                    0px 1px 1px 1px rgba(0, 0, 0, 0.35);
+    }
+
+    .toolbarbutton-1[open="true"]:hover:active {
+        background-color: var(--primary-gray-50) !important;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.15) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.35) !important;
+    }
+
+    .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+    .toolbarbutton-1:hover > .toolbarbutton-menubutton-dropmarker {
+        border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .toolbarbutton-1:hover:active > .toolbarbutton-menubutton-dropmarker {
+        border-left: 1px solid rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /*——————— message header ———————*/
+    /* labels */
+    label:not(.toolbarbutton-1 label, .toolbarbutton-menubutton-button label) {
+        color: var(--primary-gray-20);
+    }
+
+    /* dropdown */
+    select,
+    #msgIdentity,
+    #msgIdentity:hover {
+        color: var(--primary-white) !important;
+        background: var(--primary-gray-70) !important;
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.15) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+        transition: 50ms ease-in-out;
+    }
+
+    /* recipient buttons */
+    .recipient-button {
+        color: var(--primary-gray-20);
+    }
+
+    .recipient-button:hover, 
+    .recipient-button:hover:active {
+        color: var(--primary-white);
+    }
+
+    button#extraAddressRowsMenuButton {
+        color: var(--primary-gray-30);
+    }
+
+    button#extraAddressRowsMenuButton:hover,
+    button#extraAddressRowsMenuButton:hover:active {
+        color: var(--primary-gray-10);
+    }
+
+    button#extraAddressRowsMenuButton[aria-expanded="true"] {
+        color: var(--primary-gray-10);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .remove-field-button {
+        color: var(--primary-whiter);
+        background: var(--primary-red-900) !important;
+        border-radius: 16px;
+    }
+
+    .remove-field-button:hover {
+        background: var(--primary-red-700) !important;
+    }
+
+    /* autocomplete */
+    .autocomplete-richlistitem {
+        color: var(--primary-gray-30);
+        border: 1px solid transparent;
+    }
+
+    .autocomplete-richlistitem:hover,
+    .autocomplete-richlistitem:hover[selected],
+    #msgIdentityPopup >  menuitem[selected="true"] {
+        background-color: var(--primary-black) !important;
+        border: 1px solid var(--primary-gray-50) !important;
+    }
+
+    /* textbox */
+    textbox,
+    .address-container,
+    #msgSubject {
+        color: var(--primary-gray-10) !important;
+        background: var(--primary-gray-100) !important;
+        border: 1px solid var(--primary-gray-50);
+        transition: 50ms ease-in-out;
+    }
+
+    textbox:hover,
+    .address-container:hover,
+    #msgSubject:hover {
+        border: 1px solid var(--primary-gray-40);
+        transition: 50ms ease-in-out;
+    }
+
+    textbox[focused="true"],
+    .address-container[focused="true"],
+    #msgSubject:focus {
+        background-color: var(--primary-black) !important;
+        border: 1px solid var(--primary-gray-40) !important;
+        box-shadow: 0px 0px 0px 3px var(--primary-gray-50) !important;
+        transition: 50ms ease-in-out;
+    }
+
+    /* address-pill */
+    /* BUG when editing an invalid-address the text is unreadable */
+    .address-pill {
+        background: var(--primary-gray-70);
+        border: none;
+    }
+
+    .address-pill label {
+        color: var(--primary-gray-20) !important;
+    }
+
+    .address-pill:not(.address-pill.invalid-address, .address-pill .key-issue).editing,
+    .address-pill:hover:not(.editing),
+    .address-pill:active:not(.editing),
+    .address-pill:focus:not(.editing) {
+        color: var(--primary-blue-300);
+        background-color: var(--primary-highlight-blue) !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .address-pill:not(.address-pill.invalid-address, .address-pill .key-issue)[selected],
+    .address-pill:not(.address-pill.invalid-address, .address-pill .key-issue).editing label,
+    .address-pill[selected]:not(.editing) label {
+        color: var(--primary-blue-500) !important; 
+        background-color: var(--primary-highlight-blue) !important;
+        transition: 50ms ease-in-out;
+    }
+
+    .address-pill[selected]:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill[selected]:not(.editing) {
+        color: var(--primary-blue-500) !important;
+        background-color: var(--primary-highlight-blue) !important;
+        border: none;
+        box-shadow: none;
+        transition: 50ms ease-in-out;
+    }
+
+    .address-pill.invalid-address,
+    .address-pill.invalid-address[selected]:not(.editing),
+    .address-pill.invalid-address:hover:not(.editing),
+    .address-pill.invalid-address:focus:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.invalid-address[selected]:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.invalid-address:hover:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.invalid-address:focus:not(.editing) {
+        background-color: var(--primary-red-900) !important;
+        box-shadow: none !important;
+        border: none !important;
+        transition: 50ms ease-in-out;
+    }
+
+    .address-pill.invalid-address label {
+        color: var(--primary-white) !important;
+    }
+
+    .address-pill.key-issue,
+    .address-pill.key-issue:hover:not(.editing),
+    .address-pill.key-issue:focus:not(.editing),
+    .address-pill.key-issue[selected]:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.key-issue[selected]:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.key-issue:hover:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.key-issue:focus:not(.editing) {
+        background-color: var(--primary-yellow-700) !important;
+        box-shadow: none !important;
+        border: none !important;
+        transition: 50ms ease-in-out;
+    }
+
+    .address-pill.key-issue label {
+        color: var(--primary-white) !important;
+    }
+
+    .address-pill[selected]:not(.editing),
+    .address-pill.invalid-address[selected]:not(.editing),
+    .address-pill.key-issue[selected]:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill[selected]:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.invalid-address[selected]:not(.editing),
+    #MsgHeadersToolbar[brighttext] .address-pill.key-issue[selected]:not(.editing) {
+        color: inherit;
+        background-color: inherit;
+        border: none;
+    }
+
+    /*——————— formatting toolbar ———————*/
+    /* format dropdown */
+    #ParagraphSelect,
+    #ParagraphSelect:hover,
+    #FontFaceSelect,
+    #FontFaceSelect:hover {
+        color: var(--primary-white) !important;
+        background: var(--primary-gray-70) !important;
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.15) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+        transition: 50ms ease-in-out;
+    }
+
+    /* color picker */
+    .color-button,
+    .color-button[disabled="true"] {
+        border: 1px solid rgba(100, 100, 100, 0.2);
+    }
+
+    /* buttons */
+    toolbarbutton.formatting-button  {
+        color: var(--primary-gray-20);
+        margin: 0px 3px;
+        padding: 0px 4px;
+    }
+
+    toolbarbutton.formatting-button:not([disabled="true"]):hover {
+        color: var(--primary-gray-10);
+        background: transparent;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    toolbarbutton.formatting-button:not([disabled="true"]):is([open="true"],[checked="true"],:hover:active) {
+        color: var(--primary-blue-300);
+        background: var(--primary-highlight-blue) !important;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    toolbarbutton.formatting-button:not([disabled="true"]):is([open="true"],:hover:active) {
+        color: var(--primary-blue-300);
+        background: var(--primary-highlight-blue) !important;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    /*——————— status bar ———————*/
+    #status-bar {
+        border-top: 1px solid var(--primary-gray-50) !important;
+    }
 }
