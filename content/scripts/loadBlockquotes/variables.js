@@ -1,58 +1,69 @@
-const QCGlobals = {
+const PrimaryGlobals = {
   // border widths in unit "ex" (correspond to "thin", "medium" and "thick")
-  aQC_borderwidth: [0.1667, 0.5, 0.8333],
+  aPrimary_borderwidth: [0.1667, 0.5, 0.8333],
   // border styles
-  aQC_borderstyle: ["double", "solid", "dashed", "dotted"],
+  aPrimary_borderstyle: ["double", "solid", "dashed", "dotted"],
   // maximum quote levels - NOT used on all arrays so search for "5" in code additionally
-  nQC_MAX_LEVELS: 5
+  nPrimary_MAX_LEVELS: 5
 };
 
-const DefaultOptions = {
+const DefaultVariables = {
   debug: false,
 
-  colorText: true,
-  colorBackground: true,
+  allowTextColor: true,
+  allowBackgroundColor: true,
 
-  /******* Only for reference: Thunderbirds own colors *****
-      fg_l1: "#729FCF",
-      fg_l2: "#AD7FA8",
-      fg_l3: "#8AE234",
-      fg_l4: "#FCAF3E",
-      fg_l5: "#E9B96E",
-  **********************************************************/
+  light_fg1: "hsl(32, 55%, 12%)", // primary-blacker
+  light_fg2: "hsl(32, 55%, 12%)", // primary-blacker
+  light_fg3: "hsl(32, 55%, 12%)", // primary-blacker
+  light_fg4: "hsl(32, 55%, 12%)", // primary-blacker
+  light_fg5: "hsl(32, 55%, 12%)", // primary-blacker
+  light_bg1: "hsla(350, 84%, 63%, 0.05)", // primary-highlight-red
+  light_bg2: "hsla(44, 100%, 50%, 0.05)", // primary-highlight-yellow
+  light_bg3: "hsla(74, 68%, 44%, 0.05)", // primary-highlight-green
+  light_bg4: "hsla(186, 66%, 46%, 0.05)", // primary-highlight-blue
+  light_bg5: "hsla(236, 100%, 72%, 0.05)", // primary-highlight-violet
 
-  fg_l1: "hsl(32, 55%, 12%)", // primary-blacker
-  fg_l2: "hsl(32, 55%, 12%)", // primary-blacker
-  fg_l3: "hsl(32, 55%, 12%)", // primary-blacker
-  fg_l4: "hsl(32, 55%, 12%)", // primary-blacker
-  fg_l5: "hsl(32, 55%, 12%)", // primary-blacker
-  bg_l1: "hsla(350, 84%, 63%, 0.05)", // primary-highlight-red
-  bg_l2: "hsla(44, 100%, 50%, 0.05)", // primary-highlight-yellow
-  bg_l3: "hsla(74, 68%, 44%, 0.05)", // primary-highlight-green
-  bg_l4: "hsla(186, 66%, 46%, 0.05)", // primary-highlight-blue
-  bg_l5: "hsla(236, 100%, 72%, 0.05)", // primary-highlight-violet
+  dark_fg1: "hsl(33, 66%, 90%)",
+  dark_fg2: "hsl(33, 66%, 90%)",
+  dark_fg3: "hsl(33, 66%, 90%)",
+  dark_fg4: "hsl(33, 66%, 90%)",
+  dark_fg5: "hsl(33, 66%, 90%)",
+  dark_bg1: "hsla(350, 84%, 63%, 0.05)", // primary-highlight-red
+  dark_bg2: "hsla(44, 100%, 50%, 0.05)", // primary-highlight-yellow
+  dark_bg3: "hsla(74, 68%, 44%, 0.05)", // primary-highlight-green
+  dark_bg4: "hsla(186, 66%, 46%, 0.05)", // primary-highlight-blue
+  dark_bg5: "hsla(236, 100%, 72%, 0.05)", // primary-highlight-violet
 
   borderMode: 0,
-  borderColor: "hsl(36, 37%, 83%)", // primary-gray-40
+  primaryLightBorderColor: "hsl(36, 37%, 83%)", // primary-gray-40
+  primaryDarkBorderColor: "hsl(33, 20%, 20%)",
 
   borderStyle: 1,
   borderWidth: 2,
-  borderposition_bottom: false,
-  borderposition_left: true,
-  borderposition_right: false,
-  borderposition_top: false,
+  borderPositionBottom: false,
+  borderPositionLeft: true,
+  borderPositionRight: false,
+  borderPositionTop: false,
   collapseBorders: false,
 
   colorHTMLmessages: true,
 
   usermsgcolors: true,
 
-  messagetextcolor: "hsl(31, 45%, 20%)", // primary-black
-  messagebgcolor: "hsl(35, 36%, 95%)", // primary-white
-  messagelinkcolor: "hsl(43, 89%, 38%)", // primary-yellow-900
-  messagelinkhovercolor: "hsl(43, 100%, 42%)", // primary-yellow-700
-  signaturecolor: "hsl(34, 28%, 60%)", // primary-gray-60
-  signaturelinkcolor: "hsl(43, 89%, 38%)", // primary-yellow-900
+  primaryLightTextColor: "hsl(31, 45%, 20%)", // primary-black
+  primaryLightBGColor: "hsl(35, 36%, 95%)", // primary-white
+  primaryLightLinkColor: "hsl(43, 89%, 38%)", // primary-yellow-900
+  primaryLightLinkHoverColor: "hsl(43, 100%, 42%)", // primary-yellow-700
+  primaryLightSignatureColor: "hsl(34, 28%, 60%)", // primary-gray-60
+  primaryLightSignatureLinkColor: "hsl(43, 89%, 38%)", // primary-yellow-900
+
+  primaryDarkTextColor: "hsl(33, 66%, 90%)",
+  primaryDarkBGColor: "hsl(27, 14%, 15%)",
+  primaryDarkLinkColor: "hsl(50, 100%, 46%)",
+  primaryDarkLinkHoverColor: "hsl(46, 91%, 69%)",
+  primaryDarkSignatureColor: "hsl(35, 27%, 55%)",
+  primaryDarkSignatureLinkColor: "hsl(50, 100%, 46%)",
 
   hidesignatures: false,
   hidestructdelimiters: true,
@@ -61,21 +72,35 @@ const DefaultOptions = {
   enableUsermsgcolorsOnCompose: true,
 
 };
-const OptionsList = Object.keys(DefaultOptions);
+const VariablesList = Object.keys(DefaultVariables);
 
-const LightmodeColorOptions = {
-  fg_l1: DefaultOptions.fg_l1,
-  fg_l2: DefaultOptions.fg_l2,
-  fg_l3: DefaultOptions.fg_l3,
-  fg_l4: DefaultOptions.fg_l4,
-  fg_l5: DefaultOptions.fg_l5,
-  bg_l1: DefaultOptions.bg_l1,
-  bg_l2: DefaultOptions.bg_l2,
-  bg_l3: DefaultOptions.bg_l3,
-  bg_l4: DefaultOptions.bg_l4,
-  bg_l5: DefaultOptions.bg_l5
+const PrimaryLightColorVariables = {
+  light_fg1: DefaultVariables.light_fg1,
+  light_fg2: DefaultVariables.light_fg2,
+  light_fg3: DefaultVariables.light_fg3,
+  light_fg4: DefaultVariables.light_fg4,
+  light_fg5: DefaultVariables.light_fg5,
+  light_bg1: DefaultVariables.light_bg1,
+  light_bg2: DefaultVariables.light_bg2,
+  light_bg3: DefaultVariables.light_bg3,
+  light_bg4: DefaultVariables.light_bg4,
+  light_bg5: DefaultVariables.light_bg5
 };
-const LightmodeColorOptionsList = Object.keys(LightmodeColorOptions);
+const PrimaryLightColorVariablesList = Object.keys(PrimaryLightColorVariables);
+
+const PrimaryDarkColorVariables = {
+  dark_fg1: DefaultVariables.dark_fg1,
+  dark_fg2: DefaultVariables.dark_fg2,
+  dark_fg3: DefaultVariables.dark_fg3,
+  dark_fg4: DefaultVariables.dark_fg4,
+  dark_fg5: DefaultVariables.dark_fg5,
+  dark_bg1: DefaultVariables.dark_bg1,
+  dark_bg2: DefaultVariables.dark_bg2,
+  dark_bg3: DefaultVariables.dark_bg3,
+  dark_bg4: DefaultVariables.dark_bg4,
+  dark_bg5: DefaultVariables.dark_bg5
+};
+const PrimaryDarkColorVariablesList = Object.keys(PrimaryDarkColorVariables);
 
 function defaultError(error) {
   console.error("[QuoteColors] [defaultError]: Error:", error);

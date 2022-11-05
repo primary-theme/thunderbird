@@ -64,9 +64,9 @@ async function resetOnStorageChanges(changes) {
 
 async function init() {
   // await reloadAllOptions is necessary before composeCss = ...
-  await reloadAllOptions();
+  await reloadAllVariables();
   composeCss = ComposeCssObj.initMain();
-  await reloadAllOptions().then(registerCss).then(registerScripts);
+  await reloadAllVariables().then(registerCss).then(registerScripts);
 }
 
 messenger.storage.onChanged.addListener(resetOnStorageChanges);

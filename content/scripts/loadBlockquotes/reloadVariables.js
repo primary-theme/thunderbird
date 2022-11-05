@@ -1,59 +1,78 @@
-var options = {};
+var variableList = {};
 
-function reloadOption(id) {
-  options[id] = DefaultOptions[id];
+function reloadVariable(id) {
+  variableList[id] = DefaultVariables[id];
 }
 
-async function reloadAllOptions() {
-  await reloadOption("colorText");
-  await reloadOption("colorBackground");
+async function reloadAllVariables() {
+  await reloadVariable("allowTextColor");
+  await reloadVariable("allowBackgroundColor");
 
-  await reloadOption("fg_l1");
-  await reloadOption("fg_l2");
-  await reloadOption("fg_l3");
-  await reloadOption("fg_l4");
-  await reloadOption("fg_l5");
-  await reloadOption("bg_l1");
-  await reloadOption("bg_l2");
-  await reloadOption("bg_l3");
-  await reloadOption("bg_l4");
-  await reloadOption("bg_l5");
+  await reloadVariable("light_fg1");
+  await reloadVariable("light_fg2");
+  await reloadVariable("light_fg3");
+  await reloadVariable("light_fg4");
+  await reloadVariable("light_fg5");
+  await reloadVariable("light_bg1");
+  await reloadVariable("light_bg2");
+  await reloadVariable("light_bg3");
+  await reloadVariable("light_bg4");
+  await reloadVariable("light_bg5");
 
-  await reloadOption("borderMode");
-  await reloadOption("borderColor");
+  await reloadVariable("dark_fg1");
+  await reloadVariable("dark_fg2");
+  await reloadVariable("dark_fg3");
+  await reloadVariable("dark_fg4");
+  await reloadVariable("dark_fg5");
+  await reloadVariable("dark_bg1");
+  await reloadVariable("dark_bg2");
+  await reloadVariable("dark_bg3");
+  await reloadVariable("dark_bg4");
+  await reloadVariable("dark_bg5");
 
-  await reloadOption("borderStyle");
-  await reloadOption("borderWidth");
-  await reloadOption("borderposition_bottom");
-  await reloadOption("borderposition_left");
-  await reloadOption("borderposition_right");
-  await reloadOption("borderposition_top");
-  await reloadOption("collapseBorders");
+  await reloadVariable("borderMode");
+  await reloadVariable("primaryLightBorderColor");
+  await reloadVariable("primaryDarkBorderColor");
 
-  await reloadOption("colorHTMLmessages");
+  await reloadVariable("borderStyle");
+  await reloadVariable("borderWidth");
+  await reloadVariable("borderPositionBottom");
+  await reloadVariable("borderPositionLeft");
+  await reloadVariable("borderPositionRight");
+  await reloadVariable("borderPositionTop");
+  await reloadVariable("collapseBorders");
 
-  await reloadOption("usermsgcolors");
+  await reloadVariable("colorHTMLmessages");
 
-  await reloadOption("messagetextcolor");
-  await reloadOption("messagebgcolor");
-  await reloadOption("messagelinkcolor");
-  await reloadOption("messagelinkhovercolor");
-  await reloadOption("signaturecolor");
-  await reloadOption("signaturelinkcolor");
+  await reloadVariable("usermsgcolors");
 
-  await reloadOption("hidesignatures");
-  await reloadOption("hidestructdelimiters");
+  await reloadVariable("primaryLightTextColor");
+  await reloadVariable("primaryLightBGColor");
+  await reloadVariable("primaryLightLinkColor");
+  await reloadVariable("primaryLightLinkHoverColor");
+  await reloadVariable("primaryLightSignatureColor");
+  await reloadVariable("primaryLightSignatureLinkColor");
 
-  await reloadOption("enableQuotecolorsOnCompose");
-  await reloadOption("enableUsermsgcolorsOnCompose");
+  await reloadVariable("primaryDarkTextColor");
+  await reloadVariable("primaryDarkBGColor");
+  await reloadVariable("primaryDarkLinkColor");
+  await reloadVariable("primaryDarkLinkHoverColor");
+  await reloadVariable("primaryDarkSignatureColor");
+  await reloadVariable("primaryDarkSignatureLinkColor");
 
-  await reloadOption("enableQuoteCollapse");
-  await reloadOption("quoteCollapseByDefault");
-  await reloadOption("quoteCollapseOnlySubquotes");
+  await reloadVariable("hidesignatures");
+  await reloadVariable("hidestructdelimiters");
+
+  await reloadVariable("enableQuotecolorsOnCompose");
+  await reloadVariable("enableUsermsgcolorsOnCompose");
+
+  await reloadVariable("enableQuoteCollapse");
+  await reloadVariable("quoteCollapseByDefault");
+  await reloadVariable("quoteCollapseOnlySubquotes");
 }
 
-async function optionsInit() {
-  await reloadAllOptions();
+async function variableListInit() {
+  await reloadAllVariables();
 }
 
-optionsInit();
+variableListInit();
