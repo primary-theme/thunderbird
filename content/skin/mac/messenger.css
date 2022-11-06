@@ -1,4 +1,4 @@
-/* Global */
+/* MacOS */
 
 /*——————— Essentials ———————*/
 @import url(chrome://Primary/content/skin/colors.css);
@@ -6,7 +6,7 @@
 
 /*——————— Inner ———————*/
 @import url(chrome://Primary/content/skin/root.css); /* used as Fallback */
-@import url(chrome://Primary/content/skin/primaryToolbar.css);
+@import url(chrome://Primary/content/skin/mac/primaryToolbar.css);
 @import url(chrome://Primary/content/skin/messengerInbox.css);
 @import url(chrome://Primary/content/skin/folderPane.css);
 @import url(chrome://Primary/content/skin/messageHeader.css);

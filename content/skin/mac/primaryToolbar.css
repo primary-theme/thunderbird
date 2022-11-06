@@ -1,4 +1,4 @@
-/* Global */
+/* MacOS */
 
 /*————————————————————————————————————————————————————————
                     Sizing + Light Mode
@@ -14,6 +14,10 @@
 .mail-toolbox::after,
 .contentTabToolbox::after {
     --chrome-content-separator-color: var(--primary-gray-40);
+}
+
+toolbarspacer {
+    min-width: 0 !important;
 }
 
 .toolbarbutton-1,

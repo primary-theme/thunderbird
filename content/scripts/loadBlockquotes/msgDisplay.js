@@ -1,4 +1,4 @@
-consoleDebug("[QuoteColors]: Run msgDisplay.js");
+consoleDebug("[PrimaryDebug]: Run msgDisplay.js");
 
 var PrimaryObj = {
   // reference to message body
@@ -8,22 +8,21 @@ var PrimaryObj = {
   bIsHTMLMessage : false,
   bIsFormatFlowed : false,
   
-  aLightColorsFg : new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
-  aLightColorsBg : new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
-
-  aDarkColorsFg: new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
-  aDarkColorsBg: new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
-
   bHideStructDelim : false,
   
-  
+  aLightBlockquoteTextColor : new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
+  aLightBlockquoteBackgroundColor : new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
+
+  aDarkBlockquoteTextColor: new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
+  aDarkBlockquoteBackgroundColor: new Array(PrimaryGlobals.nPrimary_MAX_LEVELS),
+
   // ########################################################################
   // basic object initialization
   // returns: void
   
   initMain : function()
   {
-    consoleDebug("[QuoteColors] [msgDisplay.js]: PrimaryObj.initMain");
+    consoleDebug("[PrimaryDebug] [msgDisplay.js]: PrimaryObj.initMain");
 
     // get preferences
     PrimaryObj.getPrimaryPreferences();
@@ -31,10 +30,10 @@ var PrimaryObj = {
     // get message body
     this.oMsgBody = document.body;
     if (this.oMsgBody) {
-      consoleDebug("[QuoteColors] [msgDisplay.js]: document.body: true");
-      consoleDebug("[QuoteColors] [msgDisplay.js]: document.body: " + document.body);
+      consoleDebug("[PrimaryDebug] [msgDisplay.js]: document.body: true");
+      consoleDebug("[PrimaryDebug] [msgDisplay.js]: document.body: " + document.body);
     } else {
-      consoleDebug("[QuoteColors] [msgDisplay.js]: document.body: false");
+      consoleDebug("[PrimaryDebug] [msgDisplay.js]: document.body: false");
       return;  // without body return
     }
 
@@ -42,83 +41,74 @@ var PrimaryObj = {
   },
   
   // ########################################################################
+  // read Quote Colors preferences
+  // returns: void
   
   getPrimaryPreferences : function()
   {
-    consoleDebug("[QuoteColors] [msgDisplay.js]: OCObj.getPrimaryPreferences");
+    consoleDebug("[PrimaryDebug] [msgDisplay.js]: OCObj.getPrimaryPreferences");
 
     // ########################################################################
     // set value from user prefs
 
-    this.bEnableTextColor = variableList.allowTextColor;
-    this.bEnableBackgroundColor = variableList.allowBackgroundColor;
-
-    this.aLightColorsFg[0] = variableList.light_fg1;
-    this.aLightColorsBg[0] = variableList.light_bg1;
-
-    this.aLightColorsFg[1] = variableList.light_fg2;
-    this.aLightColorsBg[1] = variableList.light_bg2;
-
-    this.aLightColorsFg[2] = variableList.light_fg3;
-    this.aLightColorsBg[2] = variableList.light_bg3;
-
-    this.aLightColorsFg[3] = variableList.light_fg4;
-    this.aLightColorsBg[3] = variableList.light_bg4;
-
-    this.aLightColorsFg[4] = variableList.light_fg5;
-    this.aLightColorsBg[4] = variableList.light_bg5;
-
-    this.aDarkColorsFg[0] = variableList.dark_fg1;
-    this.aDarkColorsBg[0] = variableList.dark_bg1;
-
-    this.aDarkColorsFg[1] = variableList.dark_fg2;
-    this.aDarkColorsBg[1] = variableList.dark_bg2;
-
-    this.aDarkColorsFg[2] = variableList.dark_fg3;
-    this.aDarkColorsBg[2] = variableList.dark_bg3;
-
-    this.aDarkColorsFg[3] = variableList.dark_fg4;
-    this.aDarkColorsBg[3] = variableList.dark_bg4;
-
-    this.aDarkColorsFg[4] = variableList.dark_fg5;
-    this.aDarkColorsBg[4] = variableList.dark_bg5;
+    this.bEnableBlockquoteTextColor = variableList.enableBlockquoteTextColor;
+    this.bEnableBlockquoteBackgroundColor = variableList.enableBlockquoteBackgroundColor;
 
     this.nBorderMode = variableList.borderMode;
-    this.sLightBorderColor = variableList.primaryLightBorderColor;
-    this.sDarkBorderColor = variableList.primaryDarkBorderColor;
-
     var nIdxBorderWidth = variableList.borderWidth;
     this.nBorderWidth = PrimaryGlobals.aPrimary_borderwidth[nIdxBorderWidth];
     var nIdxBorderStyle = variableList.borderStyle;
     var sBorderStyle = PrimaryGlobals.aPrimary_borderstyle[nIdxBorderStyle];
-    this.bBorderLeftEn = variableList.borderPositionLeft;
-    this.bBorderRightEn = variableList.borderPositionRight;
+    this.bBorderLeftEn = variableList.borderposition_left;
+    this.bBorderRightEn = variableList.borderposition_right;
     this.sBorderLeftStyle = this.bBorderLeftEn ? sBorderStyle : "none";
     this.sBorderRightStyle = this.bBorderRightEn ? sBorderStyle : "none";
-    this.sBorderTopStyle = variableList.borderPositionTop ? sBorderStyle : "none";
-    this.sBorderBottomStyle = variableList.borderPositionBottom ? sBorderStyle : "none";
+    this.sBorderTopStyle = variableList.borderposition_top ? sBorderStyle : "none";
+    this.sBorderBottomStyle = variableList.borderposition_bottom ? sBorderStyle : "none";
     this.bCollapseBorders = variableList.collapseBorders;
 
     this.bColorHTMLMsg = variableList.colorHTMLmessages;
 
     this.bUseCustomMsgColors = variableList.usermsgcolors;
 
-    this.sLightMsgTextColor = variableList.primaryLightTextColor;
-    this.sLightMsgBgColor = variableList.primaryLightBGColor;
-    this.sLightMsgLinkColor = variableList.primaryLightLinkColor;
-    this.sLightMsgLinkHoverColor = variableList.primaryLightLinkHoverColor;
-    this.sLightSigColor = variableList.primaryLightSignatureColor;
-    this.sLightSigLinkColor = variableList.primaryLightSignatureLinkColor;
-
-    this.sDarkMsgTextColor = variableList.primaryDarkTextColor;
-    this.sDarkMsgBgColor = variableList.primaryDarkBGColor;
-    this.sDarkMsgLinkColor = variableList.primaryDarkLinkColor;
-    this.sDarkMsgLinkHoverColor = variableList.primaryDarkLinkHoverColor;
-    this.sDarkSigColor = variableList.primaryDarkSignatureColor;
-    this.sDarkSigLinkColor = variableList.primaryDarkSignatureLinkColor;
-
     this.bHideSignatures = variableList.hidesignatures;
     this.bHideStructDelim = variableList.hidestructdelimiters;
+
+    this.aLightBlockquoteTextColor[0] = variableList.primaryLightBlockquoteTextColor1;
+    this.aLightBlockquoteTextColor[1] = variableList.primaryLightBlockquoteTextColor2;
+    this.aLightBlockquoteTextColor[2] = variableList.primaryLightBlockquoteTextColor3;
+    this.aLightBlockquoteTextColor[3] = variableList.primaryLightBlockquoteTextColor4;
+    this.aLightBlockquoteTextColor[4] = variableList.primaryLightBlockquoteTextColor5;
+    this.aLightBlockquoteBackgroundColor[0] = variableList.primaryLightBlockquoteBackgroundColor1;
+    this.aLightBlockquoteBackgroundColor[1] = variableList.primaryLightBlockquoteBackgroundColor2;
+    this.aLightBlockquoteBackgroundColor[2] = variableList.primaryLightBlockquoteBackgroundColor3;
+    this.aLightBlockquoteBackgroundColor[3] = variableList.primaryLightBlockquoteBackgroundColor4;
+    this.aLightBlockquoteBackgroundColor[4] = variableList.primaryLightBlockquoteBackgroundColor5;
+    this.sLightBorderColor = variableList.primaryLightBorderColor;
+    this.sLightTextColor = variableList.primaryLightTextColor;
+    this.sLightBgColor = variableList.primaryLightBackgroundColor;
+    this.sLightLinkColor = variableList.primaryLightLinkColor;
+    this.sLightLinkHoverColor = variableList.primaryLightLinkHoverColor;
+    this.sLightSignatureColor = variableList.primaryLightSignatureColor;
+    this.sLightSignatureLinkColor = variableList.primaryLightSignatureLinkColor;
+
+    this.aDarkBlockquoteTextColor[0] = variableList.primaryDarkBlockquoteTextColor1;
+    this.aDarkBlockquoteTextColor[1] = variableList.primaryDarkBlockquoteTextColor2;
+    this.aDarkBlockquoteTextColor[2] = variableList.primaryDarkBlockquoteTextColor3;
+    this.aDarkBlockquoteTextColor[3] = variableList.primaryDarkBlockquoteTextColor4;
+    this.aDarkBlockquoteTextColor[4] = variableList.primaryDarkBlockquoteTextColor5;
+    this.aDarkBlockquoteBackgroundColor[0] = variableList.primaryDarkBlockquoteBackgroundColor1;
+    this.aDarkBlockquoteBackgroundColor[1] = variableList.primaryDarkBlockquoteBackgroundColor2;
+    this.aDarkBlockquoteBackgroundColor[2] = variableList.primaryDarkBlockquoteBackgroundColor3;
+    this.aDarkBlockquoteBackgroundColor[3] = variableList.primaryDarkBlockquoteBackgroundColor4;
+    this.aDarkBlockquoteBackgroundColor[4] = variableList.primaryDarkBlockquoteBackgroundColor5;
+    this.sDarkBorderColor = variableList.primaryDarkBorderColor;
+    this.sDarkTextColor = variableList.primaryDarkTextColor;
+    this.sDarkBgColor = variableList.primaryDarkBackgroundColor;
+    this.sDarkLinkColor = variableList.primaryDarkLinkColor;
+    this.sDarkLinkHoverColor = variableList.primaryDarkLinkHoverColor;
+    this.sDarkSignatureColor = variableList.primaryDarkSignatureColor;
+    this.sDarkSignatureLinkColor = variableList.primaryDarkSignatureLinkColor;
   },
 
   // ########################################################################
@@ -127,11 +117,11 @@ var PrimaryObj = {
   
   generateStyleBlock : function(bMsgContainsQuotes)
   {
-    consoleDebug("[QuoteColors] [msgDisplay.js]: generateStyleBlock");
-    consoleDebug("[QuoteColors] [msgDisplay.js]: bMsgContainsQuotes:" + bMsgContainsQuotes);
+    consoleDebug("[PrimaryDebug] [msgDisplay.js]: generateStyleBlock");
+    consoleDebug("[PrimaryDebug] [msgDisplay.js]: bMsgContainsQuotes:" + bMsgContainsQuotes);
 
-    var primaryLightCSS = '';
-    var primaryDarkCSS = '';
+    var sPrimaryLightCSS = '';
+    var sPrimaryDarkCSS = '';
 
     const sBlockquoteSelector = "blockquote[type=cite] ";
     const sBlockquoteSelector5 = sBlockquoteSelector + sBlockquoteSelector + sBlockquoteSelector + sBlockquoteSelector + sBlockquoteSelector;
@@ -139,7 +129,7 @@ var PrimaryObj = {
     PrimaryObj.bGraphQuotEn = true;
 
     // Start "prefers-color-scheme: dark" for Darkmode
-    primaryDarkCSS += "@media (prefers-color-scheme: dark) {\n";
+    sPrimaryDarkCSS += "@media (prefers-color-scheme: dark) {\n";
 
     if(bMsgContainsQuotes)
     {
@@ -153,64 +143,60 @@ var PrimaryObj = {
             sBlockquoteSelectorLevel += sBlockquoteSelector;
           }
           
-          primaryLightCSS += sBlockquoteSelectorLevel + ", " + sBlockquoteSelector5 + sBlockquoteSelectorLevel;
-          primaryDarkCSS += sBlockquoteSelectorLevel + ", " + sBlockquoteSelector5 + sBlockquoteSelectorLevel;
-
-          primaryLightCSS += "{";
-          primaryDarkCSS += "{";
+          sPrimaryLightCSS += sBlockquoteSelectorLevel + ", " + sBlockquoteSelector5 + sBlockquoteSelectorLevel;
+          sPrimaryDarkCSS += sBlockquoteSelectorLevel + ", " + sBlockquoteSelector5 + sBlockquoteSelectorLevel;
+          sPrimaryLightCSS += "{";
+          sPrimaryDarkCSS += "{";
 
           // text color
-          primaryLightCSS += "color:" + (this.bEnableTextColor ? this.aLightColorsFg[i] : "inherit") + " !important;";
-          primaryDarkCSS += "color:" + (this.bEnableTextColor ? this.aDarkColorsFg[i] : "inherit") + " !important;";
+          sPrimaryLightCSS += "color:" + (this.bEnableBlockquoteTextColor ? this.aLightBlockquoteTextColor[i] : "inherit") + " !important;";
+          sPrimaryDarkCSS += "color:" + (this.bEnableBlockquoteTextColor ? this.aDarkBlockquoteTextColor[i] : "inherit") + " !important;";
 
           // background color
-          if (this.bEnableBackgroundColor) {
-            primaryLightCSS += "background-color:" + this.aLightColorsBg[i] + " !important;";
-            primaryDarkCSS += "background-color:" + this.aDarkColorsBg[i] + " !important;";
+          if (this.bEnableBlockquoteBackgroundColor) {
+            sPrimaryLightCSS += "background-color:" + this.aLightBlockquoteBackgroundColor[i] + " !important;";
+            sPrimaryDarkCSS += "background-color:" + this.aDarkBlockquoteBackgroundColor[i] + " !important;";
           }
 
           // only add/style borders if graphical quoting is enabled
           if (this.bGraphQuotEn) {
-            primaryLightCSS += "border-color:" + ((this.nBorderMode == false) ? this.aLightColorsFg[i] : this.sLightBorderColor) + " !important;";
-            primaryDarkCSS += "border-color:" + ((this.nBorderMode == false) ? this.aDarkColorsFg[i] : this.sDarkBorderColor) + " !important;";
-
-            primaryLightCSS += "border-width:" + this.nBorderWidth + "px !important;";
-            primaryDarkCSS += "border-width:" + this.nBorderWidth + "px !important;";
-
-            primaryLightCSS += "border-style:" + this.sBorderTopStyle + " " + this.sBorderRightStyle + " " + this.sBorderBottomStyle + " " + this.sBorderLeftStyle + " !important;";
-            primaryDarkCSS += "border-style:" + this.sBorderTopStyle + " " + this.sBorderRightStyle + " " + this.sBorderBottomStyle + " " + this.sBorderLeftStyle + " !important;";
+            sPrimaryLightCSS += "border-color:" + ((this.nBorderMode == false) ? this.aLightBlockquoteTextColor[i] : this.sLightBorderColor) + " !important;";
+            sPrimaryDarkCSS += "border-color:" + ((this.nBorderMode == false) ? this.aDarkBlockquoteTextColor[i] : this.sDarkBorderColor) + " !important;";
+            sPrimaryLightCSS += "border-width:" + this.nBorderWidth + "px !important;";
+            sPrimaryDarkCSS += "border-width:" + this.nBorderWidth + "px !important;";
+            sPrimaryLightCSS += "border-style:" + this.sBorderTopStyle + " " + this.sBorderRightStyle + " " + this.sBorderBottomStyle + " " + this.sBorderLeftStyle + " !important;";
+            sPrimaryDarkCSS += "border-style:" + this.sBorderTopStyle + " " + this.sBorderRightStyle + " " + this.sBorderBottomStyle + " " + this.sBorderLeftStyle + " !important;";
 
             if (this.bCollapseBorders) {
               if (i > 0) {
                 var leftmargin = !this.bBorderLeftEn ? 1.0 : 1.0;
                 var rightmargin = !this.bBorderRightEn ? 1.0 : 1.0;
-                primaryLightCSS += "margin-left: -" + leftmargin + "px;margin-right: -" + rightmargin + "px;";
-                primaryDarkCSS += "margin-left: -" + leftmargin + "px;margin-right: -" + rightmargin + "px;";
+                sPrimaryLightCSS += "margin-left: -" + leftmargin + "px;margin-right: -" + rightmargin + "px;";
+                sPrimaryDarkCSS += "margin-left: -" + leftmargin + "px;margin-right: -" + rightmargin + "px;";
               } else {
-                primaryLightCSS += "margin-block: 8px !important; padding: 16px !important;";
-                primaryDarkCSS += "margin-block: 8px !important; padding: 16px !important;";
+                sPrimaryLightCSS += "margin-block: 8px !important; padding: 16px !important;";
+                sPrimaryDarkCSS += "margin-block: 8px !important; padding: 16px !important;";
               }
             } else {
-              primaryLightCSS += "margin-block: 8px !important; padding: 16px !important;";
-              primaryDarkCSS += "margin-block: 8px !important; padding: 16px !important;";
+              sPrimaryLightCSS += "margin-block: 8px !important; padding: 16px !important;";
+              sPrimaryDarkCSS += "margin-block: 8px !important; padding: 16px !important;";
             }
     
           } else {
             // non-graphical quoting
-            primaryLightCSS += "border: none !important;";
-            primaryDarkCSS += "border: none !important;";
-
-            primaryLightCSS += "padding: 0em !important;";
-            primaryDarkCSS += "padding: 0em !important;";
+            sPrimaryLightCSS += "border: none !important;";
+            sPrimaryDarkCSS += "border: none !important;";
+            sPrimaryLightCSS += "padding: 0em !important;";
+            sPrimaryDarkCSS += "padding: 0em !important;";
           }
 
-          primaryLightCSS += "}\n";
-          primaryDarkCSS += "}\n";
+          sPrimaryLightCSS += "}\n";
+          sPrimaryDarkCSS += "}\n";
         } // End for loop
 
         if (this.bCollapseBorders) {
-          primaryLightCSS += "blockquote[type=cite] pre{margin-left: 0em !important; margin-right: 0em !important;}\n";
-          primaryDarkCSS += "blockquote[type=cite] pre{margin-left: 0em !important; margin-right: 0em !important;}\n";
+          sPrimaryLightCSS += "blockquote[type=cite] pre{margin-left: 0em !important; margin-right: 0em !important;}\n";
+          sPrimaryDarkCSS += "blockquote[type=cite] pre{margin-left: 0em !important; margin-right: 0em !important;}\n";
         }
       }
     }
@@ -218,47 +204,45 @@ var PrimaryObj = {
     // set other messages styles (if enabled)
     if(this.bUseCustomMsgColors) {
       // set text and background colors if enabled
-      primaryLightCSS += "body {color: " + PrimaryObj.sLightMsgTextColor + "; background: " + PrimaryObj.sLightMsgBgColor + ";}\n";
-      primaryDarkCSS += "body {color: " + PrimaryObj.sDarkMsgTextColor + "; background: " + PrimaryObj.sDarkMsgBgColor + ";}\n";
+      sPrimaryLightCSS += "body {color: " + PrimaryObj.sLightTextColor + "; background: " + PrimaryObj.sLightBgColor + ";}\n";
+      sPrimaryDarkCSS += "body {color: " + PrimaryObj.sDarkTextColor + "; background: " + PrimaryObj.sDarkBgColor + ";}\n";
 
       // set link colors if enabled
-      primaryLightCSS += "a:link {color: " + this.sLightMsgLinkColor + ";}\n";
-      primaryDarkCSS += "a:link {color: " + this.sDarkMsgLinkColor + ";}\n";
-
-      primaryLightCSS += "a:link:hover {color: " + this.sLightMsgLinkHoverColor + ";}\n";
-      primaryDarkCSS += "a:link:hover {color: " + this.sDarkMsgLinkHoverColor + ";}\n";
+      sPrimaryLightCSS += "a:link {color: " + this.sLightLinkColor + ";}\n";
+      sPrimaryDarkCSS += "a:link {color: " + this.sDarkLinkColor + ";}\n";
+      sPrimaryLightCSS += "a:link:hover {color: " + this.sLightLinkHoverColor + ";}\n";
+      sPrimaryDarkCSS += "a:link:hover {color: " + this.sDarkLinkHoverColor + ";}\n";
 
       if(!this.bHideSignatures)
       {
         // set signature colors if enabled
-        primaryLightCSS += ".moz-txt-sig, .moz-signature {color: " + this.sLightSigColor + ";}\n";
-        primaryDarkCSS += ".moz-txt-sig, .moz-signature {color: " + this.sDarkSigColor + ";}\n";
-        
-        primaryLightCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sLightSigLinkColor + ";}\n";
-        primaryDarkCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sDarkSigLinkColor + ";}\n";
+        sPrimaryLightCSS += ".moz-txt-sig, .moz-signature {color: " + this.sLightSignatureColor + ";}\n";
+        sPrimaryDarkCSS += ".moz-txt-sig, .moz-signature {color: " + this.sDarkSignatureColor + ";}\n";
+        sPrimaryLightCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sLightSignatureLinkColor + ";}\n";
+        sPrimaryDarkCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sDarkSignatureLinkColor + ";}\n";
       }
     }
 
     if(this.bHideSignatures) {
-      primaryLightCSS += ".moz-txt-sig, .moz-signature {display: none;}\n";
-      primaryDarkCSS += ".moz-txt-sig, .moz-signature {display: none;}\n";
+      sPrimaryLightCSS += ".moz-txt-sig, .moz-signature {display: none;}\n";
+      sPrimaryDarkCSS += ".moz-txt-sig, .moz-signature {display: none;}\n";
     }
 
     if(this.bHideStructDelim) {
-      primaryLightCSS += ".moz-txt-tag {display: none !important;}\n";
-      primaryDarkCSS += ".moz-txt-tag {display: none !important;}\n";
+      sPrimaryLightCSS += ".moz-txt-tag {display: none !important;}\n";
+      sPrimaryDarkCSS += ".moz-txt-tag {display: none !important;}\n";
     }
 
     // Close @media for Darkmode
-    primaryDarkCSS += "}\n";
+    sPrimaryDarkCSS += "}\n";
 
-    var LightPlusDarkCSS = primaryLightCSS + primaryDarkCSS;
-    return LightPlusDarkCSS;
+    var PrimaryLightPlusDarkCSS = sPrimaryLightCSS + sPrimaryDarkCSS;
+    return PrimaryLightPlusDarkCSS;
   },
   
   applyColorsToMsg : function()
   {
-    consoleDebug("[QuoteColors] [msgDisplay.js]: applyColorsToMsg");
+    consoleDebug("[PrimaryDebug] [msgDisplay.js]: applyColorsToMsg");
 
     var elmBody = this.oMsgBody;
     // does not seem to be a valid message
@@ -268,10 +252,10 @@ var PrimaryObj = {
     var nextElm = elmBody.firstChild;
     while( nextElm )
     {
-      consoleDebug("[QuoteColors] [msgDisplay.js]: nextElm");
+      consoleDebug("[PrimaryDebug] [msgDisplay.js]: nextElm");
       if( nextElm.nodeName == "DIV" && nextElm.hasAttribute("class") )
       {
-        consoleDebug("[QuoteColors] [msgDisplay.js]: div class");
+        consoleDebug("[PrimaryDebug] [msgDisplay.js]: div class");
         elmDiv = nextElm;
         break;
       }
@@ -282,7 +266,7 @@ var PrimaryObj = {
     {
       // empty message, only set background color
       if(PrimaryObj.bUseCustomMsgColors)
-        elmBody.bgColor = PrimaryObj.sLightMsgBgColor;
+        elmBody.bgColor = PrimaryObj.sLightBgColor;
       return;
     }
 
@@ -290,17 +274,17 @@ var PrimaryObj = {
     switch( elmDiv.getAttribute("class") )
     {
       case "moz-text-html":
-        consoleDebug("[QuoteColors] [msgDisplay.js]: moz-text-html");
+        consoleDebug("[PrimaryDebug] [msgDisplay.js]: moz-text-html");
         PrimaryObj.bIsHTMLMessage = true;
         PrimaryObj.bIsFormatFlowed = false;
         break;
       case "moz-text-plain":
-        consoleDebug("[QuoteColors] [msgDisplay.js]: moz-text-plain");
+        consoleDebug("[PrimaryDebug] [msgDisplay.js]: moz-text-plain");
         PrimaryObj.bIsHTMLMessage = false;
         PrimaryObj.bIsFormatFlowed = false;
         break;
       case "moz-text-flowed":
-        consoleDebug("[QuoteColors] [msgDisplay.js]: moz-text-flowed");
+        consoleDebug("[PrimaryDebug] [msgDisplay.js]: moz-text-flowed");
         PrimaryObj.bIsHTMLMessage = false;
         PrimaryObj.bIsFormatFlowed = true;
         break;

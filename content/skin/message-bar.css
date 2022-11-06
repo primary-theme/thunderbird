@@ -2,42 +2,4 @@
 @import url(chrome://Primary/content/skin/colors.css);
 @import url(chrome://Primary/content/skin/fonts.css);
 
-/*———————————————————————————————————————
-            Sizing + Light Mode
-———————————————————————————————————————*/
-
-/* BUG */
-:host {
-    --message-bar-background-color: var(--in-content-page-background);
-    --message-bar-text-color: var(--in-content-text-color);
-}
-
-:host([type=warning]) {
-    --message-bar-background-color: var(--primary-highlight-orange);
-    --message-bar-text-color: var(--primary-gray-100);
-}
-
-:host([type=success]) {
-    --message-bar-background-color: var(--primary-highlight-green);
-    --message-bar-text-color: var(--primary-gray-100);
-}
-  
-:host([type=error]),
-:host([type=critical]) {
-    --message-bar-background-color: var(--primary-highlight-red);
-    --message-bar-text-color: var(--primary-gray-100);
-}
-
-.container.infobar {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset,
-                0px 1px 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-/*———————————————————————————————————————
-                Dark Mode
-———————————————————————————————————————*/
-
-/* @media (prefers-color-scheme: dark) {
-
-} */
+/* BUG TODO */

@@ -1,5 +1,5 @@
 function consoleDebug(text, object) {
-  if(options.debug == true) {
+  if(variableList.debug == true) {
     if(object != undefined) {
       console.debug(text, object);
     }

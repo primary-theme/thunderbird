@@ -35,7 +35,7 @@ Available in both Light and Dark modes. Relax and have fun while you read your e
 
 Primary for Thunderbird under the hood works more like an extension than a theme.
 
-Permissions requested are messagesRead, messagesModify, compose, storage, tabs, and other experimental APIs. I understand that this may seem a lot and may worry some users but I guarantee you that I am only accessing components for the purposes of fulfilling Primary's design language. Though, it is at your discretion to continue installing the extension.
+Permissions requested are messagesRead, messagesModify, compose, storage, tabs, and other experimental APIs. I understand that this may seem a lot and may worry some users but I guarantee you that I am only accessing components for the purposes of fulfilling Primary's design language. The permissions are only set to read parts and classes of the app so that the theme can modify the visual appearance of the app. No data is collected and transmitted elsewhere. Though, it is still at your discretion to continue installing the extension.
 
 If you see a parts of code that may be posed a security-threat let me know by posting an issue or if you can I'd appreciate a pull request!
 
@@ -64,6 +64,7 @@ Thank you for understanding! 🙏
     - Tasks (Not Fully Tested | 🆘 Help Wanted)
     - Chat (Not Fully Tested | 🆘 Help Wanted)
     - ~~Notification~~ (🆘 Help Wanted)
+- Planned Support for [Conversation Add-on](https://addons.thunderbird.net/en-US/thunderbird/addon/gmail-conversation-view/)
 
 #### Available in both Light Mode and Dark Mode! To lean how to activate your preferred mode, read the Complete Guide to Installing Primary below.
 
@@ -71,22 +72,22 @@ Thank you for understanding! 🙏
 
 Due to some restrictions or unfound solutions in implementing some parts of the design, there are extra steps needed to complete the Primary experience. Here's the full guide:
 
-1. Start by setting your Thunderbird theme to default.
+1. Start by setting your Thunderbird theme to default. To do this, go to the Settings by pressing the cog on the left vertical toolbar. If you aren't seeing this your left toolbar might be collapsed, so open it by pressing the arrow on the leftmost part of the bottom status bar. Once you've opened the Settings tab, press **Add-ons and Themes** which should take you to another tab. In the **Add-ons and Themes** tab, press **Themes**.
     - If you plan to use Primary in Light Mode, install Thunderbird's Default Light Theme.
     - If you plan to use Primary in Dark Mode, install Thunderbird's Default Dark Theme.
     - *Do not install the System Auto Default Theme. Primary breaks with that option, sorry!*
 2. Next, install Primary via the Thunderbird Add-Ons store.
 3. Then, Go back to Thunderbird and open Settings by pressing the gear icon on the Left Toolbar.
-4. Under General → Language and Appearance → press the **Colors** button.
+4. Under General → Language and Appearance → press the **Colors** button. A pop-up should show. When you press a color picker for the text or background color, another window will pop-up with all sorts of different color pickers. We will be using RGB so head on to the tab with 3 sliders as its icons, and make sure the dropdown is set to RGB Sliders.
     - If you're using Primary in Light Mode:
         1. Set your Text Color to an RGB of `47, 32, 12` respectively. This should be a dark brown color.
         2. Set your Background Color to an RGB of `250, 248, 245` respectively. This should be an ivory-like color.
-        3. Set *"Override the colors specificed by the content with my selections above:"* to **Always**.
+        3. Set *"Override the colors specificed by the content with my selections above:"* to **Never**.
         4. To confirm changes, press OK.
     - If you're using Primary in Dark Mode:
         1. Set your Text Color to an RGB of `246, 230, 213` respectively. This should be an ivory-like color.
         2. Set your Background Color to an RGB of `44, 38, 33` respectively. This should be a dark brown color.
-        3. Set *"Override the colors specificed by the content with my selections above:"* to **Always**.
+        3. Set *"Override the colors specificed by the content with my selections above:"* to **Never**.
         4. To confirm changes, press OK.
     - This will color plain text/HTML messages. Though, sometimes it doesn't work because the message's styling 
 5. **(OPTIONAL)** If you'd like to use the font that Primary uses for its interface for your messages and composer, follow these steps:
