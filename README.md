@@ -64,7 +64,7 @@ Thank you for understanding! 🙏
     - Tasks (Not Fully Tested | 🆘 Help Wanted)
     - Chat (Not Fully Tested | 🆘 Help Wanted)
     - ~~Notification~~ (🆘 Help Wanted)
-- Planned Support for [Conversation Add-on](https://addons.thunderbird.net/en-US/thunderbird/addon/gmail-conversation-view/)
+- Planned Support for [Conversation Add-on](https://addons.thunderbird.net/en-US/thunderbird/addon/gmail-conversation-view/) (🆘 Help Wanted)
 
 #### Available in both Light Mode and Dark Mode! To lean how to activate your preferred mode, read the Complete Guide to Installing Primary below.
 
