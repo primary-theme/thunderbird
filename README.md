@@ -98,6 +98,8 @@ Due to some restrictions or unfound solutions in implementing some parts of the 
     5. Set your Monospace font to **Inter**.
     6. Uncheck *"Use fixed width font for plain text messages"*.
 
+### 🎨 Suggested Tag Colors
+
 #### 🎉🥳 And you're all set! If you like it, consider supporting ☕ [Primary's development](https://ko-fi.com/ceciliamay)
 
 ## 🖼️ Screenshots

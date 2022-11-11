@@ -17,6 +17,8 @@
     border-top: 1px solid var(--primary-gray-40) !important;
 }
 
+/* Removed Menubar Classes to fix MacOS alignment issue */
+
 /* Buttons */
 .toolbarbutton-1,
 .toolbarbutton-1:is([disabled="true"]),
@@ -252,6 +254,14 @@ textbox[focused="true"],
 }
 
 /* format dropdown */
+#ParagraphSelect {
+    min-width: 100px;
+}
+
+#FontFaceSelect {
+    min-width: 200px;
+}
+
 #ParagraphSelect,
 #ParagraphSelect:hover,
 #FontFaceSelect,
@@ -396,6 +406,10 @@ toolbarbutton.formatting-button:not([disabled="true"]):is([open="true"],:hover:a
         box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.15) inset,
                     0px 1px 1px 0px rgba(0, 0, 0, 0.1);
         transition: 50ms ease-in-out;
+    }
+
+    #msgIdentity:hover {
+        border: 1px solid rgba(0, 0, 0, 0.4) !important;
     }
 
     /* recipient buttons */

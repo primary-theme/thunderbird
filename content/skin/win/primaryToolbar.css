@@ -50,6 +50,11 @@
     border-bottom-left-radius: 16px;
 }
 
+/* Fix for Chat's Status Bar Pill */
+.mail-toolbox #statusTypeIcon.toolbarbutton-1:not(#button-getmsg, .button-appmenu) {
+    border-radius: 16px !important;
+}
+
 .mail-toolbox .toolbarbutton-1 > .toolbarbutton-menubutton-button,
 .mail-toolbox .toolbarbutton-1:hover > .toolbarbutton-menubutton-button,
 .mail-toolbox .toolbarbutton-1:hover:active > .toolbarbutton-menubutton-button {

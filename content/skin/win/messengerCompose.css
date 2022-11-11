@@ -278,6 +278,14 @@ textbox[focused="true"],
 }
 
 /* format dropdown */
+#ParagraphSelect {
+    min-width: 100px;
+}
+
+#FontFaceSelect {
+    min-width: 200px;
+}
+
 #ParagraphSelect,
 #ParagraphSelect:hover,
 #FontFaceSelect,
