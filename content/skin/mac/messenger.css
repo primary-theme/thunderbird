@@ -352,6 +352,10 @@ button.tab-close-button {
     --lwt-tabs-border-color: transparent;
 }
 
+.statusbar {
+    padding: 0px 4px 2px 2px;
+}
+
 .statusbarpanel {
     padding: 2px 4px;
 }
