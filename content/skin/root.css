@@ -281,7 +281,7 @@ toolbarbutton:hover:active {
     :root[lwt-tree] {
         --splitter-color: var(--primary-gray-50);
         /* --select-focus-text-color: var(--primary-black); */
-        --new-focused-folder-color: var(--primary-white);
+        --new-focused-folder-color: var(--primary-white) !important;
         --row-grouped-header-bg-color: var(--primary-gray-90);
         --row-grouped-header-bg-color-selected: var(--primary-gray-70);
         --sidebar-highlight-background-color: var(--primary-gray-60) !important;

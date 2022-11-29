@@ -406,7 +406,7 @@ calendar-editable-item[selected="true"].calendar-color-box {
         --viewTodayBorderColor: transparent;
         --viewTodayColor: var(--primary-gray-20);
         --viewTodayBackground: color-mix(in srgb, var(--primary-highlight-blue) 20%, var(--primary-gray-90));
-        --viewTodayLabelColor: var(--primary-gray-20);
+        --viewTodayLabelColor: var(--primary-blue-300);
         --viewTodayLabelBackground: var(--primary-highlight-blue);
         --viewTodayOffBackground: color-mix(in srgb, var(--primary-highlight-blue) 50%, var(--primary-gray-90));
         --viewTodayDayLabelBackground: color-mix(in srgb, var(--primary-highlight-blue) 20%, var(--primary-gray-90));
@@ -421,8 +421,8 @@ calendar-editable-item[selected="true"].calendar-color-box {
         --viewDayBoxOtherSelectedBackground: color-mix(in srgb, var(--primary-highlight-yellow) 20%, var(--primary-gray-90));
 
         --viewMonthOtherBackground: var(--primary-gray-90);
-        --viewMonthDayBoxSelectedColor: var(--primary-gray-20);
-        --viewMonthDayBoxLabelColor: var(--primary-gray-70);
+        --viewMonthDayBoxSelectedColor: var(--primary-yellow-300);
+        --viewMonthDayBoxLabelColor: var(--primary-gray-20);
         --viewMonthDayOtherBackground: color-mix(in srgb, var(--primary-highlight-green) 20%, var(--primary-gray-90));
         --viewMonthDayOffLabelBackground: color-mix(in srgb, var(--primary-highlight-green) 50%, var(--primary-gray-90));
 

@@ -159,7 +159,6 @@
     }
     
     #agenda .agenda-listitem .agenda-listitem-details {
-        color: var(--primary-gray-10);
         border: 1px solid transparent;
     }
     
