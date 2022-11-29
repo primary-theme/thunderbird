@@ -9,6 +9,7 @@
 /*——————— inbox header columns ———————*/
 #threadCols {
     --sidebar-text-color: var(--primary-gray-100);
+    --sidebar-highlight-text-color: var(--primary-black);
     font-weight: bold;
 }
 
@@ -68,6 +69,10 @@ richlistbox {
 #threadTree > treechildren::-moz-tree-cell-text(selected, untagged) {
     color: var(--primary-black) !important;
     font-weight: bold;
+}
+
+#threadTree > treechildren::-moz-tree-cell-text(unread) {
+    color: var(--primary-gray-100) !important;
 }
 
 /*——————— column icons  ———————*/
@@ -242,6 +247,10 @@ treechildren::-moz-tree-image(subjectCol, selected, focus) {
     }
 
     #threadTree > treechildren::-moz-tree-cell-text(selected, untagged) {
+        color: var(--primary-whiter) !important;
+    }
+
+    #threadTree > treechildren::-moz-tree-cell-text(unread) {
         color: var(--primary-whiter) !important;
     }
 

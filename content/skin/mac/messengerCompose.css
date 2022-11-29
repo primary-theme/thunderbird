@@ -17,6 +17,10 @@
     border-top: 1px solid var(--primary-gray-40) !important;
 }
 
+#compose-toolbox:-moz-lwtheme::after {
+    border-bottom: 1px solid var(--primary-gray-40) !important;
+}
+
 /* Removed Menubar Classes to fix MacOS alignment issue */
 
 /* Buttons */
@@ -337,6 +341,15 @@ toolbarbutton.formatting-button:not([disabled="true"]):is([open="true"],:hover:a
     #compose-toolbox > toolbar {
         background: var(--primary-gray-70);
         border-top: 1px solid var(--primary-gray-50) !important;
+    }
+
+    #compose-toolbox:-moz-lwtheme::after {
+        border-bottom: 1px solid var(--primary-gray-50) !important;
+    }
+
+    #MsgHeadersToolbar,
+    #FormatToolbar {
+        background: var(--primary-gray-90) !important;
     }
 
     /* Buttons */

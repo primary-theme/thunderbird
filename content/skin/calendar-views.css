@@ -20,7 +20,7 @@ div {
     --viewTodayBorderColor: transparent;
     --viewTodayColor: var(--primary-gray-100);
     --viewTodayBackground: color-mix(in srgb, var(--primary-highlight-blue) 20%, var(--primary-white));
-    --viewTodayLabelColor: var(--primary-gray-100);
+    --viewTodayLabelColor: var(--primary-blue-900);
     --viewTodayLabelBackground: var(--primary-highlight-blue);
     --viewTodayOffBackground: color-mix(in srgb, var(--primary-highlight-blue) 50%, var(--primary-white));
     --viewTodayDayLabelBackground: color-mix(in srgb, var(--primary-highlight-blue) 20%, var(--primary-white));
@@ -35,7 +35,7 @@ div {
     --viewDayBoxOtherSelectedBackground: color-mix(in srgb, var(--primary-highlight-yellow) 20%, var(--primary-white));
 
     --viewMonthOtherBackground: var(--primary-gray-20);
-    --viewMonthDayBoxSelectedColor: var(--primary-black);
+    --viewMonthDayBoxSelectedColor: var(--primary-yellow-900);
     --viewMonthDayBoxLabelColor: var(--primary-gray-80);
     --viewMonthDayOtherBackground: color-mix(in srgb, var(--primary-highlight-green) 20%, var(--primary-white));
     --viewMonthDayOffLabelBackground: color-mix(in srgb, var(--primary-highlight-green) 50%, var(--primary-white));
@@ -205,6 +205,14 @@ checkbox.treenode-checkbox > .checkbox-check {
 
 #calendar-list > li > .calendar-name {
     margin: 2px 8px;
+}
+
+#calendar-list > li > .calendar-name {
+    color: var(--primary-gray-100);
+}
+
+#calendar-list > li.selected > .calendar-name {
+    color: var(--primary-black);
 }
 
 #calendar-list > li > button.calendar-enable-button #calendar-list > li > button.calendar-enable-button,
@@ -574,7 +582,7 @@ calendar-editable-item[selected="true"].calendar-color-box {
 
     #calendar-list > li {
         color: var(--primary-gray-30) !important;
-        background-color: var(--primary-black);
+        background-color: var(--primary-gray-70);
         border: 1px solid transparent;
     }
 
@@ -586,9 +594,17 @@ calendar-editable-item[selected="true"].calendar-color-box {
         border: 1px solid var(--primary-gray-50) !important;
     }
 
+    #calendar-list > li > .calendar-name {
+        color: var(--primary-gray-10);
+    }
+
+    #calendar-list > li.selected > .calendar-name {
+        color: var(--primary-whiter);
+    }
+
     #calendar-list > li > button.calendar-enable-button #calendar-list > li > button.calendar-enable-button,
     #calendar-list > li > button.calendar-enable-button {
-        color: var(--primary-green-900) !important;
+        color: var(--primary-green-700) !important;
         background: var(--primary-highlight-green) !important;
     }
 
@@ -679,22 +695,18 @@ calendar-editable-item[selected="true"].calendar-color-box {
     calendar-editable-item.calendar-color-box {
         border: 1px solid rgba(0, 0, 0, 0.3);
         border-radius: 4px;
-        box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.25) inset,
-                    0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.25) inset,
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.4);
     }
 
     calendar-month-day-box-item[selected="true"].calendar-color-box, calendar-event-box[selected="true"].calendar-color-box,
     calendar-editable-item[selected="true"].calendar-color-box {
-        /*
-        this background var(--primary-highlight-yellow) on top of itself,
-        on top of var(--primary-white)
-        */
-        background: var(--primary-highlight-yellow) !important;
-        color: var(--primary-gray-100) !important;
+        background: var(--primary-yellow-900) !important;
+        color: var(--primary-white) !important;
         border: 1px solid rgba(0, 0, 0, 0.3);
-        box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.45) inset,
+        box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.25) inset,
                     0px 1px 1px 0px rgba(0, 0, 0, 0.15),
-                    0px 0px 0px 4px rgba(255, 255, 255, 0.2);
+                    0px 0px 0px 4px rgba(100, 100, 100, 0.2);
     }
 
     /* Timebar Now */

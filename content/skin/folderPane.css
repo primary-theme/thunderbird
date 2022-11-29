@@ -27,7 +27,8 @@ body,
     --new-folder-color: var(--primary-black);
     --new-focused-folder-color: var(--primary-gray-70);
 
-    --sidebar-highlight-text-color: var(--primary-gray-100) !important;
+    --sidebar-text-color: var(--primary-gray-100);
+    --sidebar-highlight-text-color: var(--primary-black) !important;
     --sidebar-highlight-border-color: var(--primary-gray-50);
     --sidebar-highlight-background-color: var(--primary-white);
 }
@@ -61,15 +62,27 @@ treechildren::-moz-tree-row(modeHeader),
                 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
 }
 
+#folderTree treechildren::-moz-tree-row(hover),
 #folderTree > treechildren::-moz-tree-row(folderNameCol, hover) {
     border: 1px solid var(--primary-gray-50);
 }
 
+#folderTree treechildren::-moz-tree-row(selected),
 #folderTree > treechildren::-moz-tree-row(folderNameCol, selected, focus) {
     background-color: var(--primary-white) !important;
     border: 1px solid var(--primary-gray-40);
     box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.1) inset,
                 0px 1px 1px 0px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* New Messages Text Color */
+:root #folderTree:-moz-lwtheme
+treechildren::-moz-tree-cell-text(folderNameCol, isServer-true, biffState-NewMail),
+:root #folderTree:-moz-lwtheme
+    treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true),
+:root #folderTree:-moz-lwtheme
+    treechildren::-moz-tree-cell-text(folderNameCol, specialFolder-Inbox, newMessages-true) {
+    color: var(--primary-blue-900) !important;
 }
 
 /*————————————————————————————————————————————————————————
@@ -136,11 +149,13 @@ treechildren::-moz-tree-row(modeHeader),
         box-shadow: 0px -2px 0px 0px rgba(100, 100, 100, 0.3) inset,
                     0px 1px 1px 0px rgba(0, 0, 0, 0.25);
     }
-    
+
+    #folderTree treechildren::-moz-tree-row(hover),
     #folderTree > treechildren::-moz-tree-row(folderNameCol, hover) {
         border: 1px solid var(--primary-gray-40);
     }
     
+    #folderTree treechildren::-moz-tree-row(selected),
     #folderTree > treechildren::-moz-tree-row(folderNameCol, selected, focus) {
         background-color: var(--primary-gray-60) !important;
         border: 1px solid var(--primary-gray-40);
@@ -156,5 +171,10 @@ treechildren::-moz-tree-row(modeHeader),
     :root #folderTree:-moz-lwtheme
         treechildren::-moz-tree-cell-text(folderNameCol, specialFolder-Inbox, newMessages-true) {
         color: var(--primary-blue-300) !important;
+    }
+
+    /* Unread Folders Text Color */
+    #folderTree:-moz-lwtheme treechildren::-moz-tree-cell-text(hasUnreadMessages-true) {
+        color: var(--primary-whiter) !important;
     }
 }

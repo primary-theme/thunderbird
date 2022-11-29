@@ -585,7 +585,10 @@ button.tab-close-button {
     :root #folderPaneHeader {
         --sidebar-background-color: var(--primary-gray-90);
         --sidebar-text-color: var(--primary-white);
+    }
 
+    :root[lwt-tree-brighttext] #folderPaneHeader {
+        border-bottom-color: var(--primary-gray-50);
     }
 
     #folderPaneHeader .button-flat {

@@ -190,7 +190,7 @@ toolbarbutton:hover:active {
 
         --sidebar-text-color: var(--primary-white) !important;
         --sidebar-background-color: var(--primary-gray-90);
-        --toolbar-bgcolor: var(--primary-gray-70);
+        --toolbar-bgcolor: var(--primary-gray-90);
 
         --button-bgcolor: transparent;
         --button-hover-bgcolor: transparent;
