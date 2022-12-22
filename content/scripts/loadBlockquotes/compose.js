@@ -187,6 +187,8 @@ var ComposeCssObj = {
       sPrimaryDarkCSS += "a:link {color: " + this.sDarkLinkColor + ";}\n";
       sPrimaryLightCSS += "a:link:hover {color: " + this.sLightLinkHoverColor + ";}\n";
       sPrimaryDarkCSS += "a:link:hover {color: " + this.sDarkLinkHoverColor + ";}\n";
+      sPrimaryLightCSS += "a:link:visited {color: " + this.sLightLinkVisitedColor + ";}\n";
+      sPrimaryDarkCSS += "a:link:visited {color: " + this.sDarkLinkVisitedColor + ";}\n";
 
       // set signature colors if enabled
       sPrimaryLightCSS += ".moz-txt-sig, .moz-signature {color: " + this.sLightSignatureColor + ";}\n";

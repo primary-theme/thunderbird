@@ -35,13 +35,9 @@ Available in both Light and Dark modes. Relax and have fun while you read your e
 
 Primary for Thunderbird under the hood works more like an extension than a theme.
 
-Permissions requested are messagesRead, messagesModify, compose, storage, tabs, and other experimental APIs. I understand that this may seem a lot and may worry some users but I guarantee you that I am only accessing components for the purposes of fulfilling Primary's design language. The permissions are only set to read parts and classes of the app so that the theme can modify the visual appearance of the app. No data is collected and transmitted elsewhere. Though, it is still at your discretion to continue installing the extension.
+Permissions requested are messagesRead, messagesModify, compose, storage, tabs, and other experimental APIs. These permissions are only used to style Thunderbird’s interface; i.e. changing colors, fonts, spacing, adding shadows, etc. No data is collected and/or transferred elsewhere. It also doesn’t communicate with any external service; so everything is stored locally on your machine.
 
-If you see a parts of code that may be posed a security-threat let me know by posting an issue or if you can I'd appreciate a pull request!
-
-I do not make money selling your data and never plan to do so.
-
-Thank you for understanding! 🙏
+Be reminded though, that it is still at your discretion to continue installing the extension. If you see parts of the code that may be a security threat, let me know by posting an issue or if you can, I’d appreciate a pull request!
 
 ## 👁️ Goals
 
@@ -59,11 +55,11 @@ Thank you for understanding! 🙏
     - Inbox 
     - Message
     - Composer
-    - ~~Address Book~~ (Low Priority | 🆘 Help Wanted)
+    - Address Book (Coming Soon | 🆘 Help Wanted)
     - Calendar including Today Pane
-    - Tasks (Not Fully Tested | 🆘 Help Wanted)
-    - Chat (Not Fully Tested | 🆘 Help Wanted)
-    - ~~Notification~~ (🆘 Help Wanted)
+    - Tasks (Not Fully Tested)
+    - Chat (Not Fully Tested)
+    - Notification and Modals (Coming Soon | 🆘 Help Wanted)
 - Planned Support for [Conversation Add-on](https://addons.thunderbird.net/en-US/thunderbird/addon/gmail-conversation-view/) (🆘 Help Wanted)
 
 #### Available in both Light Mode and Dark Mode! To lean how to activate your preferred mode, read the Complete Guide to Installing Primary below.

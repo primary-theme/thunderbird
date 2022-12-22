@@ -212,15 +212,17 @@ var PrimaryObj = {
       sPrimaryDarkCSS += "a:link {color: " + this.sDarkLinkColor + ";}\n";
       sPrimaryLightCSS += "a:link:hover {color: " + this.sLightLinkHoverColor + ";}\n";
       sPrimaryDarkCSS += "a:link:hover {color: " + this.sDarkLinkHoverColor + ";}\n";
+      sPrimaryLightCSS += "a:link:visited {color: " + this.sLightLinkVisitedColor + ";}\n";
+      sPrimaryDarkCSS += "a:link:visited {color: " + this.sDarkLinkVisitedColor + ";}\n";
 
-      if(!this.bHideSignatures)
-      {
-        // set signature colors if enabled
-        sPrimaryLightCSS += ".moz-txt-sig, .moz-signature {color: " + this.sLightSignatureColor + ";}\n";
-        sPrimaryDarkCSS += ".moz-txt-sig, .moz-signature {color: " + this.sDarkSignatureColor + ";}\n";
-        sPrimaryLightCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sLightSignatureLinkColor + ";}\n";
-        sPrimaryDarkCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sDarkSignatureLinkColor + ";}\n";
-      }
+      // if(!this.bHideSignatures)
+      // {
+      //   // set signature colors if enabled
+      //   sPrimaryLightCSS += ".moz-txt-sig, .moz-signature {color: " + this.sLightSignatureColor + ";}\n";
+      //   sPrimaryDarkCSS += ".moz-txt-sig, .moz-signature {color: " + this.sDarkSignatureColor + ";}\n";
+      //   sPrimaryLightCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sLightSignatureLinkColor + ";}\n";
+      //   sPrimaryDarkCSS += ".moz-txt-sig > a, .moz-signature > a {color: " + this.sDarkSignatureLinkColor + ";}\n";
+      // }
     }
 
     if(this.bHideSignatures) {
@@ -228,10 +230,10 @@ var PrimaryObj = {
       sPrimaryDarkCSS += ".moz-txt-sig, .moz-signature {display: none;}\n";
     }
 
-    if(this.bHideStructDelim) {
-      sPrimaryLightCSS += ".moz-txt-tag {display: none !important;}\n";
-      sPrimaryDarkCSS += ".moz-txt-tag {display: none !important;}\n";
-    }
+    // if(this.bHideStructDelim) {
+    //   sPrimaryLightCSS += ".moz-txt-tag {display: none !important;}\n";
+    //   sPrimaryDarkCSS += ".moz-txt-tag {display: none !important;}\n";
+    // }
 
     // Close @media for Darkmode
     sPrimaryDarkCSS += "}\n";

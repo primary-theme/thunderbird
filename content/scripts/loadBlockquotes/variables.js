@@ -54,6 +54,7 @@ const DefaultVariables = {
   primaryLightBackgroundColor: "hsl(35, 36%, 95%)", // primary-white
   primaryLightLinkColor: "hsl(43, 89%, 38%)", // primary-yellow-900
   primaryLightLinkHoverColor: "hsl(43, 100%, 42%)", // primary-yellow-700
+  primaryLightLinkVisitedColor: "hsl(43, 100%, 42%)", // primary-yellow-700
   primaryLightSignatureColor: "hsl(34, 28%, 60%)", // primary-gray-60
   primaryLightSignatureLinkColor: "hsl(43, 89%, 38%)", // primary-yellow-900
 
@@ -72,6 +73,7 @@ const DefaultVariables = {
   primaryDarkBackgroundColor: "hsl(27, 14%, 15%)",
   primaryDarkLinkColor: "hsl(50, 100%, 46%)",
   primaryDarkLinkHoverColor: "hsl(46, 91%, 69%)",
+  primaryDarkLinkVisitedColor: "hsl(46, 91%, 69%)",
   primaryDarkSignatureColor: "hsl(35, 27%, 55%)",
   primaryDarkSignatureLinkColor: "hsl(50, 100%, 46%)",
 };
