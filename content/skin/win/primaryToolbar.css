@@ -107,7 +107,7 @@
 }
 
 .mail-toolbox .toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is([open="true"], [checked="true"], :hover:active) {
-    background-color: var(--primary-blue-900);
+    background-color: var(--primary-blue-300);
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset,
                 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
