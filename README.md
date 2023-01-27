@@ -96,14 +96,21 @@ Due to some restrictions or unfound solutions in implementing some parts of the 
     - If you plan to use Primary in Light Mode, install Thunderbird's Default Light Theme.
     - If you plan to use Primary in Dark Mode, install Thunderbird's Default Dark Theme.
     - *Do not install the System Auto Default Theme. Primary breaks with that option, sorry!*
-2. Next, install Primary via the Thunderbird Add-Ons store.
-3. **(OPTIONAL, BUT NECESSARY TO COMPLETE THE EXPERIENCE)** If you'd like to use the font that Primary uses for its interface for your messages and composer, follow these steps:
+2. Next, install Primary by getting the `.zip` file from the [Latest Release](https://github.com/primary-theme/thunderbird/releases) page. This is currently the only way to install Primary as it is still under review by the Thunderbird team.
+3. Open up Thunderbird. On the menu bar, go to **Tools**, hover over **Developer Tools**, and press **Debug Add-Ons**. A new tab should open up.
+4. Press **Load Temporary Add-on**. Then, select the downloaded `.zip` file.
+5. **(OPTIONAL, BUT NECESSARY TO COMPLETE THE EXPERIENCE)** If you'd like to use the font that Primary uses for its interface for your messages and composer, follow these steps:
     1. Download and install the [Inter](https://github.com/rsms/inter/releases/download/v3.19/Inter-3.19.zip) font (Pressing the link automatically downloads the `.zip` file from the official Inter Github Release).
     2. Once installed, open Settings by pressing the gear icon on the Left Toolbar.
     3. Under General → Language & Appearance → press the **Advanced** button.
     4. Set your Sans-serif font to **Inter**.
     5. Set your Monospace font to **Inter**.
     6. Uncheck *"Use fixed width font for plain text messages"*.
+
+
+```
+VIDEO TUTORIAL TO INSTALL COMING UP
+```
 
 ### 🎨 Suggested Tag Colors
 
