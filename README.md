@@ -86,7 +86,7 @@ Be reminded though, that it is still at your discretion to continue installing t
     - Notification and Modals (Coming Soon | 🆘 Help Wanted)
 - Planned Support for [Conversation Add-on](https://addons.thunderbird.net/en-US/thunderbird/addon/gmail-conversation-view/) (🆘 Help Wanted)
 
-#### Available in both Light Mode and Dark Mode! To lean how to activate your preferred mode, read the Complete Guide to Installing Primary below.
+#### Available in both Light Mode and Dark Mode! To learn how to activate your preferred mode, read the Complete Guide to Installing Primary below.
 
 ## 📥 Complete Guide to Install Primary for Thunderbird
 
